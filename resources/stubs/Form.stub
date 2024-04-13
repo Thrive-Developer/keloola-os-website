@@ -1,0 +1,83 @@
+<template>
+    <Head :title="{{modelNameSingular}} ? 'Edit {{modelName}}' : 'Create {{modelName}}'" />
+    <div class="page-header d-print-none">
+        <div class="container-xl">
+            <div class="row g-2 align-items-center">
+                <div class="col">
+                    <h2 class="page-title">
+                        {{ {{modelNameSingular}} ? "Edit" : "Create" }} {{modelName}}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="container-xl">
+            <div class="row row-deck row-cards">
+                <form @submit.prevent="store">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body border-bottom py-3">
+                                {{dataInput}}
+                            </div>
+                            <div class="card-footer">
+                                <button
+                                    type="button"
+                                    @click="handleBackPage"
+                                    class="btn btn-danger me-2"
+                                >
+                                    Back
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import { Head, Link, router } from "@inertiajs/vue3";
+
+import { reactive } from "vue";
+
+export default {
+    components: {
+        Head,
+        Link,
+    },
+
+    props: {
+        errors: Object,
+        {{modelNameSingular}}: Object,
+    },
+
+    setup(props) {
+        const model = reactive({
+            {{dataReactive}}
+        });
+
+        function store() {
+            if (props.{{modelNameSingular}}) {
+                router.put(`/{{modelNameSingular}}/${props.{{modelNameSingular}}.id}`, model);
+                return;
+            }
+            router.post("/{{modelNameSingular}}", model);
+        }
+
+        function handleBackPage() {
+            router.get("/{{modelNameSingular}}");
+        }
+
+        return {
+            model,
+            store,
+            handleBackPage,
+        };
+    },
+};
+</script>

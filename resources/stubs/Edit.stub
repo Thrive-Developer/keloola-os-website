@@ -1,0 +1,68 @@
+<template>
+    <Head title="Edit {{modelName}}" />
+    <div class="content-wrapper">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Edit {{modelName}}</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <form @submit.prevent="update" id="{{modelName}}UpdateForm">
+                                <div class='card-body'>
+                                    {{dataInput}}
+                                </div>
+                                <div class='card-footer'>
+                                    <button type="button" @click="handleBackPage" class='btn btn-danger btn-sm mr-2'>Kembali</button>
+                                    <button type='submit' name='insert' class='btn btn-primary btn-sm'>Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</template>
+
+<script>
+    import { Head, Link, router } from '@inertiajs/vue3'
+    import LayoutApp from '../../Layouts/Master.vue'
+
+    import { reactive } from 'vue'
+
+    export default {
+        layout: LayoutApp,
+        props: {
+            {{modelNameSingular}}: Object,
+            errors: Object
+        },
+        setup(props){
+            const model = reactive({
+                {{dataReactive}}
+            })
+
+            function update(){
+                router.put(`/{{modelNameSingular}}/${props.{{modelNameSingular}}.id}`, model)
+            }
+
+            function handleBackPage(){
+                router.get('/{{modelNameSingular}}')
+            }
+
+            return {
+                model,
+                update,
+                handleBackPage
+            }
+        }
+    }
+</script>

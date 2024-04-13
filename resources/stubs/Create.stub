@@ -1,0 +1,74 @@
+<template>
+	<Head title="Create {{modelName}}" />
+	<div class="content-wrapper">
+		<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1>Tambah {{modelName}}</h1>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<form @submit.prevent="store" id="{{modelName}}Form">
+								<div class='card-body'>
+									{{dataInput}}
+								</div>
+								<div class="card-footer">
+									<button type="button" @click="handleBackPage" class="btn btn-danger btn-sm mr-2">Kembali</button>
+									<button type="submit" class="btn btn-primary btn-sm">Submit</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</template>
+
+<script>
+	import { Head, Link, router } from '@inertiajs/vue3'
+	import LayoutApp from '../../Layouts/Master.vue'
+
+	import { reactive } from 'vue'
+
+	export default {
+		components: {
+	      Head,
+	      Link,
+	    },
+
+		layout: LayoutApp,
+
+		props: {
+			errors: Object
+		},
+
+		setup() {
+			const model = reactive({
+				{{dataReactive}}
+			})
+
+			function store(){
+				router.post('/{{modelNameSingular}}', model)
+			}
+
+			function handleBackPage(){
+				router.get('/{{modelNameSingular}}')
+			}
+
+			return {
+				model,
+				store,
+				handleBackPage
+			}
+		}
+	}
+</script>
