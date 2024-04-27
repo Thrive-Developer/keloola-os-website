@@ -5,9 +5,9 @@
                 <div class="col-12 col-lg-auto mt-3 mt-lg-0">
                     <ul class="list-inline list-inline-dots mb-0">
                         <li class="list-inline-item">
-                            Copyright &copy; 2023
-                            <a href="." class="link-secondary">Tabler</a>. All
-                            rights reserved.
+                            Copyright &copy; 2024
+                            <a href="." class="link-secondary">Ilham Bahari</a>.
+                            All rights reserved.
                         </li>
                         <li class="list-inline-item">
                             <a
@@ -15,7 +15,7 @@
                                 class="link-secondary"
                                 rel="noopener"
                             >
-                                v1.0.0-beta20
+                                v1.0.0
                             </a>
                         </li>
                     </ul>

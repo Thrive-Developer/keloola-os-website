@@ -52,6 +52,7 @@
                                     >
                                 </div>
                                 <div class="mb-2">
+                                    <label class="form-label">Password</label>
                                     <div class="input-group input-group-flat">
                                         <input
                                             type="password"
