@@ -89,14 +89,14 @@ export default {
 
         function store() {
             if (props.example) {
-                router.put(`/example/${props.example.id}`, model);
+                router.put(`/admin/example/${props.example.id}`, model);
                 return;
             }
-            router.post("/example", model);
+            router.post("/admin/example", model);
         }
 
         function handleBackPage() {
-            router.get("/example");
+            router.get("/admin/example");
         }
 
         return {

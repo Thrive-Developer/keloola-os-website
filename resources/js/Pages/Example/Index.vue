@@ -43,7 +43,7 @@ export default {
         models: Object,
     },
     setup(props) {
-        const route = ref("example");
+        const route = ref("admin/example");
 
         const fields = [
             {

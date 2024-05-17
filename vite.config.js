@@ -5,7 +5,12 @@ import vuePlugin from "@vitejs/plugin-vue";
 export default defineConfig({
     plugins: [
         laravel({
-            input: ["resources/css/app.css", "resources/js/app.js"],
+            input: [
+                "resources/css/app.css",
+                "resources/js/app.js",
+                "resources/css/user.css",
+                "public/assets/flowbite.js",
+            ],
             refresh: true,
         }),
         vuePlugin({

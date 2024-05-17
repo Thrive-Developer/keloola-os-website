@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.border-gradient-yellow {
+    background: radial-gradient(circle at 100% 100%, #191919 0, #191919 14px, transparent 14px) 0% 0%/20px 20px no-repeat,
+        radial-gradient(circle at 0 100%, #191919 0, #191919 14px, transparent 14px) 100% 0%/20px 20px no-repeat,
+        radial-gradient(circle at 100% 0, #191919 0, #191919 14px, transparent 14px) 0% 100%/20px 20px no-repeat,
+        radial-gradient(circle at 0 0, #191919 0, #191919 14px, transparent 14px) 100% 100%/20px 20px no-repeat,
+        linear-gradient(#191919, #191919) 50% 50%/calc(100% - 12px) calc(100% - 40px) no-repeat,
+        linear-gradient(#191919, #191919) 50% 50%/calc(100% - 40px) calc(100% - 12px) no-repeat,
+        linear-gradient(#f0da15 0%, #9c8d0b 20%, #4c4616 50%, transparent 90%);
+}
+
+.border-gradient-green {
+    background: radial-gradient(circle at 100% 100%, #191919 0, #191919 14px, transparent 14px) 0% 0%/20px 20px no-repeat,
+        radial-gradient(circle at 0 100%, #191919 0, #191919 14px, transparent 14px) 100% 0%/20px 20px no-repeat,
+        radial-gradient(circle at 100% 0, #191919 0, #191919 14px, transparent 14px) 0% 100%/20px 20px no-repeat,
+        radial-gradient(circle at 0 0, #191919 0, #191919 14px, transparent 14px) 100% 100%/20px 20px no-repeat,
+        linear-gradient(#191919, #191919) 50% 50%/calc(100% - 12px) calc(100% - 40px) no-repeat,
+        linear-gradient(#191919, #191919) 50% 50%/calc(100% - 40px) calc(100% - 12px) no-repeat,
+        linear-gradient(#30c159 0%, #396e48 20%, #2E4B35 50%, transparent 90%);
+}
+
+.border-gradient-orange {
+    background: radial-gradient(circle at 100% 100%, #191919 0, #191919 14px, transparent 14px) 0% 0%/20px 20px no-repeat,
+        radial-gradient(circle at 0 100%, #191919 0, #191919 14px, transparent 14px) 100% 0%/20px 20px no-repeat,
+        radial-gradient(circle at 100% 0, #191919 0, #191919 14px, transparent 14px) 0% 100%/20px 20px no-repeat,
+        radial-gradient(circle at 0 0, #191919 0, #191919 14px, transparent 14px) 100% 100%/20px 20px no-repeat,
+        linear-gradient(#191919, #191919) 50% 50%/calc(100% - 12px) calc(100% - 40px) no-repeat,
+        linear-gradient(#191919, #191919) 50% 50%/calc(100% - 40px) calc(100% - 12px) no-repeat,
+        linear-gradient(#ef7825 0%, #9c4f10 20%, #6F3E14 50%, transparent 90%);
+}
+
+.border-gradient-red {
+    background: radial-gradient(circle at 100% 100%, #191919 0, #191919 14px, transparent 14px) 0% 0%/20px 20px no-repeat,
+        radial-gradient(circle at 0 100%, #191919 0, #191919 14px, transparent 14px) 100% 0%/20px 20px no-repeat,
+        radial-gradient(circle at 100% 0, #191919 0, #191919 14px, transparent 14px) 0% 100%/20px 20px no-repeat,
+        radial-gradient(circle at 0 0, #191919 0, #191919 14px, transparent 14px) 100% 100%/20px 20px no-repeat,
+        linear-gradient(#191919, #191919) 50% 50%/calc(100% - 12px) calc(100% - 40px) no-repeat,
+        linear-gradient(#191919, #191919) 50% 50%/calc(100% - 40px) calc(100% - 12px) no-repeat,
+        linear-gradient(#d14a41 0%, #6f3531 20%, #4C2B28 50%, transparent 90%);
+}
+
+.border-gradient-blue {
+    background: radial-gradient(circle at 100% 100%, #191919 0, #191919 14px, transparent 14px) 0% 0%/20px 20px no-repeat,
+        radial-gradient(circle at 0 100%, #191919 0, #191919 14px, transparent 14px) 100% 0%/20px 20px no-repeat,
+        radial-gradient(circle at 100% 0, #191919 0, #191919 14px, transparent 14px) 0% 100%/20px 20px no-repeat,
+        radial-gradient(circle at 0 0, #191919 0, #191919 14px, transparent 14px) 100% 100%/20px 20px no-repeat,
+        linear-gradient(#191919, #191919) 50% 50%/calc(100% - 12px) calc(100% - 40px) no-repeat,
+        linear-gradient(#191919, #191919) 50% 50%/calc(100% - 40px) calc(100% - 12px) no-repeat,
+        linear-gradient(#15aaf4 0%, #0c6a9a 20%, #124F6D 50%, transparent 90%);
+}
