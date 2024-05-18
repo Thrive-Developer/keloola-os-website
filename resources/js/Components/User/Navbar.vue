@@ -2,7 +2,7 @@
     <div class="w-full bg-custome-gray text-white">
         <div :class="`w-full bg-black z-10 overflow-hidden ${props.radius ? 'radius-page' : ''}`" >
             <nav class="bg-contain bg-no-repeat bg-left-top h-72 w-full pt-10 bg-black z-0" style="background-image: url(/assets/wave.svg)">
-                <div id="menu" class="transition ease-in-out duration-300">
+                <div id="menu" class="transition ease-in-out duration-300 py-6">
                     <div class="container mx-auto flex flex-wrap items-center justify-between px-2 sm:px-16">
                         <a href="/" class="flex">
                             <div class="flex justify-between items-center">
