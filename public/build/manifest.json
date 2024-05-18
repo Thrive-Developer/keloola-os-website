@@ -1,4 +1,10 @@
 {
+  "public/assets/backtop.js": {
+    "file": "assets/backtop-Ca_-QPzd.js",
+    "name": "backtop",
+    "src": "public/assets/backtop.js",
+    "isEntry": true
+  },
   "public/assets/flowbite.js": {
     "file": "assets/flowbite-Bzn8kXeU.js",
     "name": "flowbite",

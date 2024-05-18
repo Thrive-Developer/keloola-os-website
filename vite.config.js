@@ -10,6 +10,7 @@ export default defineConfig({
                 "resources/js/app.js",
                 "resources/css/user.css",
                 "public/assets/flowbite.js",
+                "public/assets/backtop.js",
             ],
             refresh: true,
         }),
