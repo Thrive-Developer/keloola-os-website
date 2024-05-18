@@ -1,0 +1,24 @@
+{
+  "public/assets/flowbite.js": {
+    "file": "assets/flowbite-Bzn8kXeU.js",
+    "name": "flowbite",
+    "src": "public/assets/flowbite.js",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-Dg80twAt.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/user.css": {
+    "file": "assets/user-CCtXQ4W4.css",
+    "src": "resources/css/user.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BfOxFPNH.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
