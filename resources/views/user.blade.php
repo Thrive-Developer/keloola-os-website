@@ -11,7 +11,7 @@
     <style>
 
     </style>
-    @vite(['resources/css/user.css', 'resources/js/app.js', 'public/assets/flowbite.js'])
+    @vite(['resources/css/user.css', 'resources/js/app.js', 'public/assets/flowbite.js', 'public/assets/backtop.js'])
     @inertiaHead
 </head>
 

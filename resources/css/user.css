@@ -51,3 +51,14 @@
         linear-gradient(#191919, #191919) 50% 50%/calc(100% - 40px) calc(100% - 12px) no-repeat,
         linear-gradient(#15aaf4 0%, #0c6a9a 20%, #124F6D 50%, transparent 90%);
 }
+
+.radius-page {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+@media screen and (min-width: 768px) {
+    .radius-page {
+        border-bottom-left-radius: 100% 20%;
+        border-bottom-right-radius: 100% 20%;
+    }
+}
