@@ -1,0 +1,30 @@
+{
+  "public/assets/backtop.js": {
+    "file": "assets/backtop-Ca_-QPzd.js",
+    "name": "backtop",
+    "src": "public/assets/backtop.js",
+    "isEntry": true
+  },
+  "public/assets/flowbite.js": {
+    "file": "assets/flowbite-Bzn8kXeU.js",
+    "name": "flowbite",
+    "src": "public/assets/flowbite.js",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-Dg80twAt.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/user.css": {
+    "file": "assets/user-h6Y885gv.css",
+    "src": "resources/css/user.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-CAG6mYpj.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
