@@ -464,69 +464,35 @@
                             <span class="nav-link-title"> Home </span>
                         </a>
                     </li>
-                    <li class="nav-item active dropdown">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#navbar-layout"
-                            data-bs-toggle="dropdown"
-                            data-bs-auto-close="false"
-                            role="button"
-                            aria-expanded="true"
-                        >
+                    <li class="nav-item">
+                        <a class="nav-link" href="/news">
                             <span
                                 class="nav-link-icon d-md-none d-lg-inline-block"
-                                ><!-- Download SVG icon from http://tabler-icons.io/i/layout-2 -->
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="icon"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="2"
-                                    stroke="currentColor"
-                                    fill="none"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <path
-                                        stroke="none"
-                                        d="M0 0h24v24H0z"
-                                        fill="none"
-                                    />
-                                    <path
-                                        d="M4 4m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
-                                    />
-                                    <path
-                                        d="M4 13m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
-                                    />
-                                    <path
-                                        d="M14 4m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
-                                    />
-                                    <path
-                                        d="M14 15m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v1a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"
-                                    />
-                                </svg>
+                                ><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-news"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11" /><path d="M8 8l4 0" /><path d="M8 12l4 0" /><path d="M8 16l4 0" /></svg>
                             </span>
-                            <span class="nav-link-title"> Layout </span>
+                            <span class="nav-link-title"> News </span>
                         </a>
-                        <div class="dropdown-menu show">
-                            <div class="dropdown-menu-columns">
-                                <div class="dropdown-menu-column">
-                                    <a
-                                        class="dropdown-item"
-                                        href="./layout-horizontal.html"
-                                    >
-                                        Horizontal
-                                    </a>
-                                    <a
-                                        class="dropdown-item active"
-                                        href="./layout-combo.html"
-                                    >
-                                        Combined
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./editions">
+                            <span
+                                class="nav-link-icon d-md-none d-lg-inline-block"
+                                ><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-versions"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z" /><path d="M7 7l0 10" /><path d="M4 8l0 8" /></svg>
+                            </span>
+                            <span class="nav-link-title"> Edition </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./release">
+                            <span
+                                class="nav-link-icon d-md-none d-lg-inline-block"
+                                ><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-history"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 8l0 4l2 2" /><path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" /></svg>
+                            </span>
+                            <span class="nav-link-title"> Release </span>
+                        </a>
                     </li>
                 </ul>
             </div>

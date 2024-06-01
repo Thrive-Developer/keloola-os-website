@@ -22,7 +22,6 @@
         </template>
     </Navbar>
 
-
     <div class="h-auto pt-28 bg-custome-gray" >
         <div class="container mx-auto px-4 sm:px-16 lg:flex lg:justify-between">
             <div class="w-full lg:w-1/3 lg:pr-6">
@@ -171,54 +170,20 @@
         </div>
         <div class="bg-contain bg-no-repeat bg-right-bottom h-72 pt-10 z-0" style="background-image: url(/assets/wave-03\ 2.svg)"></div>
     </div>
-
-    <div class="bg-custome-graylight">
+    
+    <div class="bg-custome-graylight" v-if="news.data.length > 0">
         <div class="container mx-auto px-4 sm:px-16 pt-16 pb-12">
             <p class="text-center text-white mb-2 italic">From the blog</p>
             <h2 class="text-custome-orange text-3xl font-medium text-center">Latest news</h2>
             <p class="text-center text-white mt-1 text-sm">Click news title to get to the article.</p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 items-start mt-14 gap-6">
-                <div class="bg-custome-dark p-8 rounded-xl">
+                <div class="bg-custome-dark p-8 rounded-xl" v-for="item in news.data" :key="item.id">
                     <div class="flex justify-between items-center">
-                        <p class="text-white text-sm">15-10-2023</p>
+                        <p class="text-white text-sm">{{item.created_at && fDate(item.created_at)}}</p>
                         <div class="text-white bg-custome-orange py-1 px-5 rounded-md text-sm">Blog</div>
                     </div>
-                    <p class="text-custome-orange mt-4 mb-4 text-sm">Monthly News - October 2023</p>
-                    <p class="text-white text-sm leading-loose">Lorem ipsum dolor sit amet, consect 
-                        adipiscing elit, sed diam nonummy nibh 
-                        euismod tincidunt ut laoreet dolore 
-                        magna aliquam erat volutpat. Ut wisi 
-                        enim ad minim veniam, quis nostrud 
-                        exerci[...]
-                    </p>
-                </div>
-                <div class="bg-custome-dark p-8 rounded-xl">
-                    <div class="flex justify-between items-center">
-                        <p class="text-white text-sm">10-10-2023</p>
-                        <div class="text-white bg-custome-orange py-1 px-5 rounded-md text-sm">Blog</div>
-                    </div>
-                    <p class="text-custome-orange mt-4 mb-4 text-sm">Edge Iso Available for Keloola OS</p>
-                    <p class="text-white text-sm leading-loose">Lorem ipsum dolor sit amet, consectetuer 
-                        adipiscing elit, sed diam nonummy nibh 
-                        euismod tincidunt ut laoreet dolore 
-                        magna aliquam erat volutpat. Ut wisi 
-                        enim ad minim veniam, quis nostrud 
-                        exerci tation ullamcorper suscipit lobortis 
-                        nisl ut[...]
-                    </p>
-                </div>
-                <div class="bg-custome-dark p-8 rounded-xl">
-                    <div class="flex justify-between items-center">
-                        <p class="text-white text-sm">24-09-2023</p>
-                        <div class="text-white bg-custome-orange py-1 px-5 rounded-md text-sm">Blog</div>
-                    </div>
-                    <p class="text-custome-orange mt-4 mb-4 text-sm">Keloola OS Tambora Released!</p>
-                    <p class="text-white text-sm leading-loose">Lorem ipsum dolor sit amet, consect 
-                        adipiscing elit, sed diam nonummy 
-                        euismod tincidunt ut laoreet dolore 
-                        magna aliquam erat volutpat. Ut wisi 
-                        enim ad minim veniam, quis[...]
-                    </p>
+                    <p class="text-custome-orange mt-4 mb-4 text-sm">{{item.title}}</p>
+                    <p class="text-white text-sm leading-loose">{{item.content}}</p>
                 </div>
             </div>
         </div>
@@ -276,6 +241,7 @@
 import Navbar from "../../Components/User/Navbar.vue";
 import Footer from "../../Components/User/Footer.vue";
 import UserLayout from "../../Layouts/User.vue";
+import dayjs from 'dayjs'
 
 export default {
     name: "IndexUser",
@@ -284,5 +250,16 @@ export default {
         Navbar,
         Footer,
     },
+    props: {
+        news: Object,
+    },
+    setup() {
+        const fDate = (date) => {
+            return dayjs(date).format('DD-MM-YYYY')
+        }
+
+        return {
+            fDate}
+    }
 };
 </script>

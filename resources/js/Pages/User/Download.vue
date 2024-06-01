@@ -22,8 +22,17 @@
                                         <th scope="col" class="px-4 py-2 border border-black min-w-56">STATUS</th>
                                     </tr>
                                 </thead>
-                                <tbody class="text-sm leading-loose">
-                                    <tr>
+                                <tbody class="text-sm leading-loose items-start">
+                                    <tr v-for="(row, index) in release.data" :key="index">
+                                        <td class="px-4 py-2 border border-black">{{row.version}}</td>
+                                        <td class="px-4 py-2 border border-black">{{row.code_name}}</td>
+                                        <td class="px-4 py-2 border border-black">
+                                            <p v-for="(edition, index) in row.edition_id" :key="index">{{edition}}</p>
+                                        </td>
+                                        <td class="px-4 py-2 border border-black">{{row.package_use}}</td>
+                                        <td class="px-4 py-2 border border-black">{{row.status}}</td>
+                                    </tr>
+                                    <!-- <tr>
                                         <td class="px-4 py-2 border border-black">21.2</td>
                                         <td class="px-4 py-2 border border-black">Victoria</td>
                                         <td class="px-4 py-2 border border-black">Cinnamon</td>
@@ -204,7 +213,7 @@
                                         <td class="px-4 py-2 border border-black">Cinnamon</td>
                                         <td class="px-4 py-2 border border-black">Debian Bookworm</td>
                                         <td class="px-4 py-2 border border-black">Long term support release (LTS).</td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
@@ -230,6 +239,9 @@ export default {
     components: {
         Navbar,
         Footer,
+    },
+    props: {
+        release: Object,
     },
 };
 </script>
