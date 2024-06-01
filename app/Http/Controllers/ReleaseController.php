@@ -39,6 +39,7 @@ class ReleaseController extends Controller
     public function create(Request $request)
     {
         $edition = Edition::getModelData($request->all());
+        
     	return Inertia::render('Release/Form', [
             'edition' => $edition
         ]);
@@ -63,6 +64,7 @@ class ReleaseController extends Controller
     public function edit(Model $release, Request $request)
     {
         $edition = Edition::getModelData($request->all());
+        $release->edition_id = json_decode($release->edition_id, true);
         return Inertia::render('Release/Form', [
             'release' => $release,
             'edition' => $edition
