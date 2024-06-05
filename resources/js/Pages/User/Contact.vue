@@ -17,7 +17,7 @@
                             <p class="text-center text-sm leading-loose mb-5">We're providing documentation to make <br>
                                 using Linux Mint as easy as possible.
                             </p>
-                            <a href="https://www.keloola.com/comming-soon/" target="_blank" class="text-white bg-custome-orange py-2.5 px-5 rounded-lg mx-auto mt-4 font-semibold">Read</a>
+                            <a href="https://www.keloola.com/coming-soon/" target="_blank" class="text-white bg-custome-orange py-2.5 px-5 rounded-lg mx-auto mt-4 font-semibold">Read</a>
                         </div>
                         <div>
                             <img src="assets/forum.svg" alt="forum" class="mx-auto">
@@ -26,7 +26,7 @@
                                 assistance from other users. Many <br>
                                 questions are already answered. <br>
                             </p>
-                            <a href="https://www.keloola.com/comming-soon/" target="_blank" class="text-white bg-custome-orange py-2.5 px-5 rounded-lg mx-auto mt-4 font-semibold">Browse</a>
+                            <a href="https://www.keloola.com/coming-soon/" target="_blank" class="text-white bg-custome-orange py-2.5 px-5 rounded-lg mx-auto mt-4 font-semibold">Browse</a>
                         </div> -->
                         <div>
                             <img src="assets/chat.svg" alt="chat" class="mx-auto">

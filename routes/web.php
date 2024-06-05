@@ -22,5 +22,7 @@ Route::get('/ready-download', [\App\Http\Controllers\User\UserController::class,
 Route::get('/sponsors', [\App\Http\Controllers\User\UserController::class, 'sponsors'])->name('user.sponsors');
 Route::get('/tambora', [\App\Http\Controllers\User\UserController::class, 'tambora'])->name('user.tambora');
 Route::get('/team', [\App\Http\Controllers\User\UserController::class, 'team'])->name('user.team');
+Route::get('/new-feature', [\App\Http\Controllers\User\UserController::class, 'newFeature'])->name('user.newFeature');
+Route::get('/release-notes', [\App\Http\Controllers\User\UserController::class, 'releaseNotes'])->name('user.releaseNotes');
 Route::resource('news', App\Http\Controllers\NewsController::class);
 Route::resource('editions', App\Http\Controllers\EditionsController::class);Route::resource('release', App\Http\Controllers\ReleaseController::class);

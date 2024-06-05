@@ -93,4 +93,16 @@ class UserController extends Controller
         Inertia::setRootView('user');
         return Inertia::render('User/Team');
     }
+
+    public function newFeature()
+    {
+        Inertia::setRootView('user');
+        return Inertia::render('User/NewFeature');
+    }
+
+    public function releaseNotes()
+    {
+        Inertia::setRootView('user');
+        return Inertia::render('User/ReleaseNotes');
+    }
 }

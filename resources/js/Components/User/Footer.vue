@@ -28,21 +28,21 @@
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
                             <div>
                                 <p class="text-white font-semibold">Quick Links</p>
-                                <a href="https://www.keloola.com/comming-soon/" class="text-white block mt-2">Download</a>
-                                <a href="https://www.keloola.com/comming-soon/" class="text-white block mt-2">Donate</a>
-                                <a href="https://www.keloola.com/comming-soon/" class="text-white block mt-2">Get Involved</a>
+                                <a href="https://www.keloola.com/coming-soon/" class="text-white block mt-2">Download</a>
+                                <a href="https://www.keloola.com/coming-soon/" class="text-white block mt-2">Donate</a>
+                                <a href="https://www.keloola.com/coming-soon/" class="text-white block mt-2">Get Involved</a>
                             </div>
                             <div>
                                 <p class="text-white font-semibold">Info</p>
-                                <a href="https://www.keloola.com/comming-soon/" class="text-white block mt-2">About</a>
-                                <a href="https://www.keloola.com/comming-soon/" class="text-white block mt-2">FAQ</a>
-                                <a href="https://www.keloola.com/comming-soon/" class="text-white block mt-2">Privacy & Cookies</a>
+                                <a href="https://www.keloola.com/coming-soon/" class="text-white block mt-2">About</a>
+                                <a href="https://www.keloola.com/coming-soon/" class="text-white block mt-2">FAQ</a>
+                                <a href="https://www.keloola.com/coming-soon/" class="text-white block mt-2">Privacy & Cookies</a>
                             </div>
                             <div>
                                 <p class="text-white font-semibold">Support</p>
-                                <a href="https://www.keloola.com/comming-soon/" class="text-white block mt-2">Installation Guide</a>
-                                <a href="https://www.keloola.com/comming-soon/" class="text-white block mt-2">User Guide</a>
-                                <a href="https://www.keloola.com/comming-soon/" class="text-white block mt-2">Forums</a>
+                                <a href="https://www.keloola.com/coming-soon/" class="text-white block mt-2">Installation Guide</a>
+                                <a href="https://www.keloola.com/coming-soon/" class="text-white block mt-2">User Guide</a>
+                                <a href="https://www.keloola.com/coming-soon/" class="text-white block mt-2">Forums</a>
                             </div>
                         </div>
                     </div>
