@@ -5,13 +5,20 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Models\News;
+use App\Models\Release;
+use App\Models\Edition;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $news = News::getModelData($request->all());
+
         Inertia::setRootView('user');
-        return Inertia::render('User/Index');
+        return Inertia::render('User/Index', [
+            'news' => $news
+        ]);
     }
 
     public function contact()
@@ -26,10 +33,29 @@ class UserController extends Controller
         return Inertia::render('User/Donors');
     }
 
-    public function download()
+    public function download(Request $request)
     {
+        $models = Release::getModelData($request->all());
+        
+        $edition = Edition::all()->toArray();
+
+        foreach ($models->items() as $key => $value) {
+            $deskripsi = [];
+            $editionIds = json_decode($value->edition_id, true);
+            foreach ($editionIds as $editionId) {
+                $editionName = current(array_filter($edition, fn($item) => $item['id'] == $editionId))['nama'] ?: null;
+                
+                if ($editionName) {
+                    $deskripsi[] = $editionName;
+                }
+            }
+            $models->items()[$key]->edition_id = $deskripsi;
+        }
+
         Inertia::setRootView('user');
-        return Inertia::render('User/Download');
+        return Inertia::render('User/Download', [
+            'release' => $models
+        ]);
     }
 
     public function getInvolved()
@@ -66,5 +92,17 @@ class UserController extends Controller
     {
         Inertia::setRootView('user');
         return Inertia::render('User/Team');
+    }
+
+    public function newFeature()
+    {
+        Inertia::setRootView('user');
+        return Inertia::render('User/NewFeature');
+    }
+
+    public function releaseNotes()
+    {
+        Inertia::setRootView('user');
+        return Inertia::render('User/ReleaseNotes');
     }
 }

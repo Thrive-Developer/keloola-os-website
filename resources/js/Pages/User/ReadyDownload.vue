@@ -12,7 +12,7 @@
                 </p>
                 
                 <div class="flex justify-center mt-12">
-                    <a href="https://www.keloola.com/comming-soon/" class="text-white bg-custome-orange p-3 rounded-lg mr-4 text-xs">Installation Instructions</a>
+                    <a href="https://www.keloola.com/coming-soon/" class="text-white bg-custome-orange p-3 rounded-lg mr-4 text-xs">Installation Instructions</a>
                 </div>
             </div>
     
@@ -31,9 +31,9 @@
                                 performance in business computing.
                             </p>
                             <div class="mt-6 flex justify-start items-center gap-4">
-                                <a href="/tambora.html" class="text-white bg-custome-orange p-3 rounded-lg mr-4 text-xs">Download</a>
-                                <a href="https://www.keloola.com/comming-soon/" class="text-custome-orange text-sm">New Features</a>
-                                <a href="https://www.keloola.com/comming-soon/" class="text-custome-orange text-sm">Release Notes</a>
+                                <a href="https://www.keloola.com/coming-soon/" class="text-white bg-custome-orange p-3 rounded-lg mr-4 text-xs">Download</a>
+                                <a href="/new-feature" class="text-custome-orange text-sm">New Features</a>
+                                <a href="/release-notes" class="text-custome-orange text-sm">Release Notes</a>
                             </div>
                         </div>
                     </div>
