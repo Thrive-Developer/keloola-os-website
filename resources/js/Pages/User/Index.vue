@@ -9,7 +9,7 @@
                         <h1 class="text-white text-5xl font-bold my-2">Keloola OS</h1>
                         <p class="text-white">Unmatched Stability for Business PCs and Laptops. </p>
                         <div class="mt-4">
-                            <a href="/ready_download.html" class="text-white bg-custome-orange p-3 rounded-lg mr-4 text-xs">Download</a>
+                            <a href="/ready-download" class="text-white bg-custome-orange p-3 rounded-lg mr-4 text-xs">Download</a>
                             <button class="text-white border border-custome-orange p-3 rounded-lg text-xs">Installation Instructions</button>
                         </div>
                     </div>
