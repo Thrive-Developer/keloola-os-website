@@ -14,7 +14,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Template</title>
+    <title>Keloola OS</title>
     <meta name="msapplication-TileColor" content="" />
     <meta name="theme-color" content="" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />

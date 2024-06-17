@@ -7,20 +7,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 
-class News extends Model
+class Faq extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'news';
-
-    const ATTACHMENT_PATH = 'images/news';
+    protected $table = 'faqs';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
-    protected $fillable = ['title', 'slug', 'content'];
+    protected $fillable = ['question', 'answer'];
 
     public function saveModel($data)
     {

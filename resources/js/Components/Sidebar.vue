@@ -431,7 +431,7 @@
             <div class="collapse navbar-collapse" id="sidebar-menu">
                 <ul class="navbar-nav pt-lg-3">
                     <li class="nav-item">
-                        <a class="nav-link" href="./">
+                        <Link class="nav-link" href="/admin">
                             <span
                                 class="nav-link-icon d-md-none d-lg-inline-block"
                                 ><!-- Download SVG icon from http://tabler-icons.io/i/home -->
@@ -462,24 +462,189 @@
                                 </svg>
                             </span>
                             <span class="nav-link-title"> Home </span>
-                        </a>
+                        </Link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/news">
+                        <Link class="nav-link" href="/admin/news">
                             <span
                                 class="nav-link-icon d-md-none d-lg-inline-block"
                                 ><!-- Download SVG icon from http://tabler-icons.io/i/home -->
-                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-news"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11" /><path d="M8 8l4 0" /><path d="M8 12l4 0" /><path d="M8 16l4 0" /></svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-news"
+                                >
+                                    <path
+                                        stroke="none"
+                                        d="M0 0h24v24H0z"
+                                        fill="none"
+                                    />
+                                    <path
+                                        d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11"
+                                    />
+                                    <path d="M8 8l4 0" />
+                                    <path d="M8 12l4 0" />
+                                    <path d="M8 16l4 0" />
+                                </svg>
                             </span>
                             <span class="nav-link-title"> News </span>
-                        </a>
+                        </Link>
                     </li>
                     <li class="nav-item">
+                        <Link class="nav-link" href="/admin/faq">
+                            <span
+                                class="nav-link-icon d-md-none d-lg-inline-block"
+                                ><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-question-mark"
+                                >
+                                    <path
+                                        stroke="none"
+                                        d="M0 0h24v24H0z"
+                                        fill="none"
+                                    />
+                                    <path
+                                        d="M8 8a3.5 3 0 0 1 3.5 -3h1a3.5 3 0 0 1 3.5 3a3 3 0 0 1 -2 3a3 4 0 0 0 -2 4"
+                                    />
+                                    <path d="M12 19l0 .01" />
+                                </svg>
+                            </span>
+                            <span class="nav-link-title"> Faq </span>
+                        </Link>
+                    </li>
+                    <li class="nav-item">
+                        <Link class="nav-link" href="/admin/testimonial">
+                            <span
+                                class="nav-link-icon d-md-none d-lg-inline-block"
+                                ><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-message-dots"
+                                >
+                                    <path
+                                        stroke="none"
+                                        d="M0 0h24v24H0z"
+                                        fill="none"
+                                    />
+                                    <path d="M12 11v.01" />
+                                    <path d="M8 11v.01" />
+                                    <path d="M16 11v.01" />
+                                    <path
+                                        d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3z"
+                                    />
+                                </svg>
+                            </span>
+                            <span class="nav-link-title"> Testimonial </span>
+                        </Link>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle show"
+                            href="#navbar-layout"
+                            data-bs-toggle="dropdown"
+                            data-bs-auto-close="false"
+                            role="button"
+                            aria-expanded="true"
+                        >
+                            <span
+                                class="nav-link-icon d-md-none d-lg-inline-block"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-download"
+                                >
+                                    <path
+                                        stroke="none"
+                                        d="M0 0h24v24H0z"
+                                        fill="none"
+                                    />
+                                    <path
+                                        d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"
+                                    />
+                                    <path d="M7 11l5 5l5 -5" />
+                                    <path d="M12 4l0 12" />
+                                </svg>
+                            </span>
+                            <span class="nav-link-title"> Download </span>
+                        </a>
+                        <div class="dropdown-menu show" data-bs-popper="static">
+                            <div class="dropdown-menu-columns">
+                                <div class="dropdown-menu-column">
+                                    <Link
+                                        class="dropdown-item"
+                                        href="/admin/os-version"
+                                    >
+                                        OS Version
+                                    </Link>
+
+                                    <Link
+                                        class="dropdown-item"
+                                        href="/admin/os-edition"
+                                    >
+                                        OS Edition
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="./editions">
                             <span
                                 class="nav-link-icon d-md-none d-lg-inline-block"
-                                ><!-- Download SVG icon from http://tabler-icons.io/i/home -->
-                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-versions"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z" /><path d="M7 7l0 10" /><path d="M4 8l0 8" /></svg>
+                                >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-versions"
+                                >
+                                    <path
+                                        stroke="none"
+                                        d="M0 0h24v24H0z"
+                                        fill="none"
+                                    />
+                                    <path
+                                        d="M10 5m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z"
+                                    />
+                                    <path d="M7 7l0 10" />
+                                    <path d="M4 8l0 8" />
+                                </svg>
                             </span>
                             <span class="nav-link-title"> Edition </span>
                         </a>
@@ -488,12 +653,33 @@
                         <a class="nav-link" href="./release">
                             <span
                                 class="nav-link-icon d-md-none d-lg-inline-block"
-                                ><!-- Download SVG icon from http://tabler-icons.io/i/home -->
-                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-history"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 8l0 4l2 2" /><path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" /></svg>
+                                >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-history"
+                                >
+                                    <path
+                                        stroke="none"
+                                        d="M0 0h24v24H0z"
+                                        fill="none"
+                                    />
+                                    <path d="M12 8l0 4l2 2" />
+                                    <path
+                                        d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5"
+                                    />
+                                </svg>
                             </span>
                             <span class="nav-link-title"> Release </span>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -501,7 +687,13 @@
 </template>
 
 <script>
+import { Link } from "@inertiajs/vue3";
+
 export default {
     name: "Sidebar",
+
+    components: {
+        Link,
+    },
 };
 </script>

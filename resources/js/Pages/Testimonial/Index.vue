@@ -1,10 +1,10 @@
 <template>
-    <Head title="News" />
+    <Head title="Testimonial" />
     <div class="page-header d-print-none">
         <div class="container-xl">
             <div class="row g-2 align-items-center">
                 <div class="col">
-                    <h2 class="page-title">News</h2>
+                    <h2 class="page-title">Testimonial</h2>
                 </div>
                 <div class="col-auto ms-auto d-print-none">
                     <div class="btn-list">
@@ -32,7 +32,7 @@ import Table from "../../Components/Table.vue";
 import ButtonCreate from "../../Components/Button/ButtonCreate.vue";
 
 export default {
-    name: "newsIndex",
+    name: "testimonialIndex",
     components: {
         Head,
         Link,
@@ -43,13 +43,28 @@ export default {
         models: Object,
     },
     setup(props) {
-        const route = ref("admin/news");
+        const route = ref("admin/testimonial");
 
-        const fields = [{ key: "title", label: "Title" }];
+        props.models.data.map((model) => {
+            model.description = truncate(model.description);
+        });
+
+        const fields = [
+            { key: "name", label: "Name" },
+            { key: "from", label: "From" },
+            { key: "description", label: "Description" },
+        ];
+
+        function truncate(content) {
+            return content.length > 50
+                ? content.substring(0, 50) + " [...]"
+                : content;
+        }
 
         return {
             fields,
             route,
+            truncate,
         };
     },
 };

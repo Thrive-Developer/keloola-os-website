@@ -89,36 +89,55 @@
         <div class="table-responsive">
             <table class="table card-table table-vcenter text-nowrap datatable">
                 <thead>
-                    <tr>
-                        <th>No</th>
-                        <th v-for="(field, index) in fields" :key="index">
-                            {{ field.label }}
-                        </th>
-                        <th class="text-center">Actions</th>
-                    </tr>
+                    <slot name="thead">
+                        <tr>
+                            <th>No</th>
+                            <th v-for="(field, index) in fields" :key="index">
+                                {{ field.label }}
+                            </th>
+                            <th class="text-center" v-if="isEdit || isDelete">
+                                Actions
+                            </th>
+                        </tr>
+                    </slot>
                 </thead>
                 <tbody>
-                    <tr v-for="(item, index) in models.data" :key="index">
-                        <td>{{ index + 1 }}</td>
-                        <td v-for="field in fields">
-                            {{ item[field.key] }}
-                        </td>
-                        <td class="text-center">
-                            <ButtonEdit
-                                v-if="isEdit"
-                                :route="route"
-                                :id="item.id"
-                            />
-                            <ButtonDelete
-                                v-if="isDelete"
-                                :route="route"
-                                :id="item.id"
-                            />
-                        </td>
-                    </tr>
-                    <tr v-if="models.data.length === 0">
-                        <td class="text-center" colspan="4">No data</td>
-                    </tr>
+                    <slot name="tbody">
+                        <tr
+                            v-for="(item, index) in mappingData(models.data)"
+                            :key="index"
+                        >
+                            <td>{{ index + 1 }}</td>
+                            <td v-for="field in fields" :key="field.key">
+                                <span v-if="typeof field.type == 'undefined'">
+                                    {{ item[field.key] }}
+                                </span>
+                                <span v-if="field.type == 'img'">
+                                    <img
+                                        :src="item[field.key]"
+                                        :alt="item.name"
+                                        class="img-fluid"
+                                        style="width: 50px; height: 50px"
+                                    />
+                                </span>
+                            </td>
+                            <td class="text-center" v-if="isEdit || isDelete">
+                                <ButtonEdit
+                                    v-if="isEdit"
+                                    :route="route"
+                                    :id="item.id"
+                                />
+                                <ButtonDelete
+                                    v-if="isDelete"
+                                    :route="route"
+                                    :id="item.id"
+                                />
+                            </td>
+                        </tr>
+                        <tr v-if="models.data.length === 0">
+                            <td class="text-center" colspan="10">No data</td>
+                        </tr>
+                    </slot>
                 </tbody>
             </table>
         </div>
@@ -162,6 +181,18 @@ export default {
             type: Boolean,
             default: true,
         },
+        mappingData: {
+            type: Function,
+            default: (models) => {
+                return models;
+            },
+        },
+        filter: {
+            type: Object,
+            default: () => {
+                return {};
+            },
+        },
     },
     setup(props) {
         const searchModel = reactive({
@@ -170,7 +201,11 @@ export default {
         });
 
         function handleSearch() {
-            router.get(`/${props.route}`, searchModel, { preserveState: true });
+            router.get(
+                `/${props.route}`,
+                { ...searchModel, ...props.filter },
+                { preserveState: true }
+            );
         }
 
         function clearSearch() {

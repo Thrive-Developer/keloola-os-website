@@ -1,10 +1,10 @@
 <template>
-    <Head title="News" />
+    <Head title="OS Version" />
     <div class="page-header d-print-none">
         <div class="container-xl">
             <div class="row g-2 align-items-center">
                 <div class="col">
-                    <h2 class="page-title">News</h2>
+                    <h2 class="page-title">OS Version</h2>
                 </div>
                 <div class="col-auto ms-auto d-print-none">
                     <div class="btn-list">
@@ -32,7 +32,7 @@ import Table from "../../Components/Table.vue";
 import ButtonCreate from "../../Components/Button/ButtonCreate.vue";
 
 export default {
-    name: "newsIndex",
+    name: "osversionIndex",
     components: {
         Head,
         Link,
@@ -43,9 +43,14 @@ export default {
         models: Object,
     },
     setup(props) {
-        const route = ref("admin/news");
+        const route = ref("admin/os-version");
 
-        const fields = [{ key: "title", label: "Title" }];
+        const fields = [
+            { key: "version", label: "Version" },
+            { key: "code_name", label: "Code Name" },
+            { key: "package_base", label: "Package Base" },
+            { key: "status", label: "Status" },
+        ];
 
         return {
             fields,

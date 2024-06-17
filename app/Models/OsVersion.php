@@ -7,20 +7,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 
-class News extends Model
+class OsVersion extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'news';
-
-    const ATTACHMENT_PATH = 'images/news';
+    protected $table = 'os_version';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
-    protected $fillable = ['title', 'slug', 'content'];
+    protected $fillable = ['version', 'code_name', 'slug', 'package_base', 'status', 'description'];
 
     public function saveModel($data)
     {
@@ -43,14 +41,14 @@ class News extends Model
         $params['page'] = 1;
         $params['limit'] = $params['limit'] ?? 10;
 
-        $modelQuery->latest();
+        $modelQuery->orderBy('version', 'desc');
 
         if (($sort_data = Arr::get($params, 'sort', false)) !== false) {
             $modelQuery->orderBy($sort_data['column'], $sort_data['order']);
         }
 
         if (($search = Arr::get($params, 'search', false)) !== false) {
-            $modelQuery->whereRaw('LOWER(title) LIKE ?', ['%' . strtolower($search) . '%']);
+            $modelQuery->whereRaw('LOWER(code_name) LIKE ?', ['%' . strtolower($search) . '%']);
         }
 
         if (!$raw) {
@@ -62,5 +60,11 @@ class News extends Model
         }
 
         return $modelQuery;
+    }
+
+
+    public function os_editions()
+    {
+        return $this->hasMany(OsEdition::class);
     }
 }

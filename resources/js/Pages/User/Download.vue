@@ -3,34 +3,115 @@
         <template #content>
             <!-- Content -->
             <div class="container mx-auto px-4 sm:px-16 -mt-36">
-                <h1 class="text-custome-orange text-3xl font-semibold">All Versions</h1>
+                <h1 class="text-custome-orange text-3xl font-semibold">
+                    All Versions
+                </h1>
             </div>
             <div class="bg-custome-gray text-white">
-                <div class="bg-contain bg-no-repeat bg-top z-0 bg-custome-gray mt-3" style="background-image: url(/assets/Clip\ path\ group.svg)">
+                <div
+                    class="bg-contain bg-no-repeat bg-top z-0 bg-custome-gray mt-3"
+                    style="background-image: url(/assets/Clip\ path\ group.svg)"
+                >
                     <div class="container mx-auto px-4 sm:px-16 py-12">
-                        <p class="text-center text-white mb-2 italic text-sm">Currently supported</p>
-                        <h2 class="text-custome-orange text-3xl font-medium text-center">Keloola OS Releases</h2>
-                        <p class="text-center text-white mt-1 text-sm">The table below shows all the Keloola OS releases which are currently supported.</p>
-                        <div class="overflow-auto mt-3.5" style="scrollbar-width: thin; scrollbar-color: #777777 #E4E5E7;">
-                            <table class="mt-12 text-sm font-light text-surface w-full">
-                                <thead class="bg-custome-orange text-white text-sm">
+                        <p class="text-center text-white mb-2 italic text-sm">
+                            Currently supported
+                        </p>
+                        <h2
+                            class="text-custome-orange text-3xl font-medium text-center"
+                        >
+                            Keloola OS Releases
+                        </h2>
+                        <p class="text-center text-white mt-1 text-sm">
+                            The table below shows all the Keloola OS releases
+                            which are currently supported.
+                        </p>
+                        <div
+                            class="overflow-auto mt-3.5"
+                            style="
+                                scrollbar-width: thin;
+                                scrollbar-color: #777777 #e4e5e7;
+                            "
+                        >
+                            <table
+                                class="mt-12 text-sm font-light text-surface w-full"
+                            >
+                                <thead
+                                    class="bg-custome-orange text-white text-sm"
+                                >
                                     <tr>
-                                        <th scope="col" class="px-4 py-2 border border-black min-w-24">VERSION</th>
-                                        <th scope="col" class="px-4 py-2 border border-black min-w-40">CODE NAME</th>
-                                        <th scope="col" class="px-4 py-2 border border-black min-w-28">EDITION</th>
-                                        <th scope="col" class="px-4 py-2 border border-black min-w-40">PACKAGE ASE</th>
-                                        <th scope="col" class="px-4 py-2 border border-black min-w-56">STATUS</th>
+                                        <th
+                                            scope="col"
+                                            class="px-4 py-2 border border-black min-w-24"
+                                        >
+                                            VERSION
+                                        </th>
+                                        <th
+                                            scope="col"
+                                            class="px-4 py-2 border border-black min-w-40"
+                                        >
+                                            CODE NAME
+                                        </th>
+                                        <th
+                                            scope="col"
+                                            class="px-4 py-2 border border-black min-w-28"
+                                        >
+                                            EDITION
+                                        </th>
+                                        <th
+                                            scope="col"
+                                            class="px-4 py-2 border border-black min-w-40"
+                                        >
+                                            PACKAGE ASE
+                                        </th>
+                                        <th
+                                            scope="col"
+                                            class="px-4 py-2 border border-black min-w-56"
+                                        >
+                                            STATUS
+                                        </th>
                                     </tr>
                                 </thead>
-                                <tbody class="text-sm leading-loose items-start">
-                                    <tr v-for="(row, index) in release.data" :key="index">
-                                        <td class="px-4 py-2 border border-black">{{row.version}}</td>
-                                        <td class="px-4 py-2 border border-black">{{row.code_name}}</td>
-                                        <td class="px-4 py-2 border border-black">
-                                            <p v-for="(edition, index) in row.edition_id" :key="index">{{edition}}</p>
+                                <tbody
+                                    class="text-sm leading-loose items-start"
+                                >
+                                    <tr
+                                        v-for="(row, index) in os_versions"
+                                        :key="index"
+                                    >
+                                        <td
+                                            class="px-4 py-2 border border-black"
+                                        >
+                                            {{ row.version }}
                                         </td>
-                                        <td class="px-4 py-2 border border-black">{{row.package_use}}</td>
-                                        <td class="px-4 py-2 border border-black">{{row.status}}</td>
+                                        <td
+                                            class="px-4 py-2 border border-black"
+                                        >
+                                            <a :href="`/download/${row.slug}`">
+                                                {{ row.code_name }}
+                                            </a>
+                                        </td>
+                                        <td
+                                            class="px-4 py-2 border border-black"
+                                        >
+                                            <p
+                                                v-for="(
+                                                    edition, index
+                                                ) in row.os_editions"
+                                                :key="index"
+                                            >
+                                                {{ edition.name }}
+                                            </p>
+                                        </td>
+                                        <td
+                                            class="px-4 py-2 border border-black"
+                                        >
+                                            {{ row.package_base }}
+                                        </td>
+                                        <td
+                                            class="px-4 py-2 border border-black"
+                                        >
+                                            {{ row.status }}
+                                        </td>
                                     </tr>
                                     <!-- <tr>
                                         <td class="px-4 py-2 border border-black">21.2</td>
@@ -219,13 +300,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-contain bg-no-repeat bg-left-bottom h-72 z-0 flex justify-center items-center" style="background-image: url(/assets/wave-03\ 5.svg)"></div>
+                <div
+                    class="bg-contain bg-no-repeat bg-left-bottom h-72 z-0 flex justify-center items-center"
+                    style="background-image: url(/assets/wave-03\ 5.svg)"
+                ></div>
             </div>
             <!-- End Content -->
         </template>
     </Navbar>
-    
-    <Footer/>
+
+    <Footer />
 </template>
 
 <script>
@@ -242,6 +326,7 @@ export default {
     },
     props: {
         release: Object,
+        os_versions: Array,
     },
 };
 </script>

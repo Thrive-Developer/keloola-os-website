@@ -18,37 +18,34 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body border-bottom py-3">
-                                
-                <div class="mb-3">
-                    <label class="form-label">Title</label>
-                    <input
-                        type="text"
-                        class="form-control"
-                        autocomplete="off"
-                        v-model="model.title"
-                    />
-                    <small
-                        class="form-text text-danger"
-                        v-if="errors.title"
-                        >{{ errors.title }}</small
-                    >
-                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Title</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        autocomplete="off"
+                                        v-model="model.title"
+                                    />
+                                    <small
+                                        class="form-text text-danger"
+                                        v-if="errors.title"
+                                        >{{ errors.title }}</small
+                                    >
+                                </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Content</label>
-                    <input
-                        type="text"
-                        class="form-control"
-                        autocomplete="off"
-                        v-model="model.content"
-                    />
-                    <small
-                        class="form-text text-danger"
-                        v-if="errors.content"
-                        >{{ errors.content }}</small
-                    >
-                </div>
-                
+                                <div class="mb-3">
+                                    <label class="form-label">Content</label>
+                                    <ckeditor
+                                        :editor="state.editor"
+                                        v-model="model.content"
+                                        :config="state.editorConfig"
+                                    ></ckeditor>
+                                    <small
+                                        class="form-text text-danger"
+                                        v-if="errors.content"
+                                        >{{ errors.content }}</small
+                                    >
+                                </div>
                             </div>
                             <div class="card-footer">
                                 <button
@@ -72,13 +69,16 @@
 
 <script>
 import { Head, Link, router } from "@inertiajs/vue3";
-
 import { reactive } from "vue";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import CKEditor from "@ckeditor/ckeditor5-vue";
+import UploadAdapter from "../../Plugins/UploadAdapter.js";
 
 export default {
     components: {
         Head,
         Link,
+        ckeditor: CKEditor.component,
     },
 
     props: {
@@ -88,27 +88,68 @@ export default {
 
     setup(props) {
         const model = reactive({
-            title: props.news ? props.news.title : '',
-            slug: props.news ? props.news.slug : '',
-            content: props.news ? props.news.content : '',
+            title: props.news ? props.news.title : "",
+            slug: props.news ? props.news.slug : "",
+            content: props.news ? props.news.content : "",
+        });
+
+        let state = reactive({
+            currenctProductImage: "",
+            editor: ClassicEditor,
+            editorConfig: {
+                extraPlugins: [uploadAdapterPlugin],
+                toolbar: [
+                    "undo",
+                    "redo",
+                    "|",
+                    "heading",
+                    "|",
+                    "bold",
+                    "italic",
+                    "link",
+                    "bulletedList",
+                    "numberedList",
+                    "|",
+                    "indent",
+                    "outdent",
+                    "|",
+                    "blockQuote",
+                    "insertTable",
+                    "|",
+                    "imageUpload",
+                    "mediaEmbed",
+                    // "alignment",
+                    // "fontFamily",
+                    // "fontSize",
+                ],
+            },
         });
 
         function store() {
             if (props.news) {
-                router.put(`/news/${props.news.id}`, model);
+                router.put(`/admin/news/${props.news.id}`, model);
                 return;
             }
-            router.post("/news", model);
+            router.post("/admin/news", model);
         }
 
         function handleBackPage() {
-            router.get("/news");
+            router.get("/admin/news");
+        }
+
+        function uploadAdapterPlugin(editor) {
+            editor.plugins.get("FileRepository").createUploadAdapter = (
+                loader
+            ) => {
+                return new UploadAdapter(loader);
+            };
         }
 
         return {
             model,
             store,
             handleBackPage,
+            state,
         };
     },
 };
