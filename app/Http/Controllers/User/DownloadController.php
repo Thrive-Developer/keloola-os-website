@@ -25,12 +25,44 @@ class DownloadController extends Controller
     public function detail_version($slug)
     {
         $os_version = OsVersion::where('slug', $slug)->first();
-        $editions = OsEdition::where('os_version_id', $os_version->id)->get();
+        $editions = OsEdition::where('os_version_id', $os_version->id)->orderBy('id', 'desc')->take(1)->get();
 
         Inertia::setRootView('user');
         return Inertia::render('User/Tambora', [
             'os_version' => $os_version,
             'editions' => $editions
+        ]);
+    }
+
+    public function ready_download($slug)
+    {
+        $os_version = OsVersion::where('slug', $slug)->first();
+        $editions = OsEdition::where('os_version_id', $os_version->id)->orderBy('id', 'desc')->get();
+
+        Inertia::setRootView('user');
+        return Inertia::render('User/ReadyDownload', [
+            'os_version' => $os_version,
+            'editions' => $editions
+        ]);
+    }
+
+    public function new_feature($slug)
+    {
+        $os_edition = OsEdition::where('slug', $slug)->first();
+
+        Inertia::setRootView('user');
+        return Inertia::render('User/NewFeature', [
+            'os_edition' => $os_edition,
+        ]);
+    }
+
+    public function release_notes($slug)
+    {
+        $os_edition = OsEdition::where('slug', $slug)->first();
+
+        Inertia::setRootView('user');
+        return Inertia::render('User/ReleaseNotes', [
+            'os_edition' => $os_edition,
         ]);
     }
 }

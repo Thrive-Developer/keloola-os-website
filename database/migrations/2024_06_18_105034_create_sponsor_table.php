@@ -11,16 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('os_version', function (Blueprint $table) {
+        Schema::create('sponsor', function (Blueprint $table) {
             $table->id();
-            $table->string('version');
-            $table->string('code_name');
-            $table->string('slug');
-            $table->text('description');
-            $table->string('package_base');
-            $table->string('status');
-            $table->string('slogan');
-            $table->string('image');
+            $table->string('name');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -31,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('os_version');
+        Schema::dropIfExists('sponsor');
     }
 };

@@ -561,7 +561,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a
-                            class="nav-link dropdown-toggle show"
+                            class="nav-link dropdown-toggle"
                             href="#navbar-layout"
                             data-bs-toggle="dropdown"
                             data-bs-auto-close="false"
@@ -597,7 +597,7 @@
                             </span>
                             <span class="nav-link-title"> Download </span>
                         </a>
-                        <div class="dropdown-menu show" data-bs-popper="static">
+                        <div class="dropdown-menu" data-bs-popper="static">
                             <div class="dropdown-menu-columns">
                                 <div class="dropdown-menu-column">
                                     <Link
@@ -617,12 +617,11 @@
                             </div>
                         </div>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="./editions">
+                    <li class="nav-item">
+                        <Link class="nav-link" href="/admin/sponsor-logo">
                             <span
                                 class="nav-link-icon d-md-none d-lg-inline-block"
-                                >
-                                <svg
+                                ><svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
                                     height="24"
@@ -632,7 +631,7 @@
                                     stroke-width="2"
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
-                                    class="icon icon-tabler icons-tabler-outline icon-tabler-versions"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-circles"
                                 >
                                     <path
                                         stroke="none"
@@ -640,20 +639,63 @@
                                         fill="none"
                                     />
                                     <path
-                                        d="M10 5m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z"
+                                        d="M12 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"
                                     />
-                                    <path d="M7 7l0 10" />
-                                    <path d="M4 8l0 8" />
+                                    <path
+                                        d="M6.5 17m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"
+                                    />
+                                    <path
+                                        d="M17.5 17m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"
+                                    />
                                 </svg>
                             </span>
-                            <span class="nav-link-title"> Edition </span>
-                        </a>
+                            <span class="nav-link-title"> Sponsor </span>
+                        </Link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./release">
+                        <Link class="nav-link" href="/admin/config">
                             <span
                                 class="nav-link-icon d-md-none d-lg-inline-block"
+                                ><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-settings"
                                 >
+                                    <path
+                                        stroke="none"
+                                        d="M0 0h24v24H0z"
+                                        fill="none"
+                                    />
+                                    <path
+                                        d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"
+                                    />
+                                    <path
+                                        d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"
+                                    />
+                                </svg>
+                            </span>
+                            <span class="nav-link-title"> Config </span>
+                        </Link>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#navbar-layout"
+                            data-bs-toggle="dropdown"
+                            data-bs-auto-close="false"
+                            role="button"
+                            aria-expanded="true"
+                        >
+                            <span
+                                class="nav-link-icon d-md-none d-lg-inline-block"
+                            >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -664,21 +706,45 @@
                                     stroke-width="2"
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
-                                    class="icon icon-tabler icons-tabler-outline icon-tabler-history"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-circles"
                                 >
                                     <path
                                         stroke="none"
                                         d="M0 0h24v24H0z"
                                         fill="none"
                                     />
-                                    <path d="M12 8l0 4l2 2" />
                                     <path
-                                        d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5"
+                                        d="M12 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"
+                                    />
+                                    <path
+                                        d="M6.5 17m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"
+                                    />
+                                    <path
+                                        d="M17.5 17m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"
                                     />
                                 </svg>
                             </span>
-                            <span class="nav-link-title"> Release </span>
+                            <span class="nav-link-title"> Sponsor </span>
                         </a>
+                        <div class="dropdown-menu" data-bs-popper="static">
+                            <div class="dropdown-menu-columns">
+                                <div class="dropdown-menu-column">
+                                    <Link
+                                        class="dropdown-item"
+                                        href="/admin/sponsor"
+                                    >
+                                        Category
+                                    </Link>
+
+                                    <Link
+                                        class="dropdown-item"
+                                        href="/admin/sponsor-logo"
+                                    >
+                                        Logo
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
                     </li> -->
                 </ul>
             </div>

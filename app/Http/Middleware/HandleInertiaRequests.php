@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Config;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -35,6 +36,8 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
+        $btn_install_guide = Config::where('key', 'BUTTON_INSTALLATION_GUIDE')->first();
+
         return array_merge(parent::share($request), [
             'flash' => [
                 'success' => fn () => $request->session()->get('success'),
@@ -42,6 +45,7 @@ class HandleInertiaRequests extends Middleware
             ],
             'user' => auth()->user(),
             'csrf_token' => csrf_token(),
+            'btn_install_guide' => $btn_install_guide,
             // 'authorization' => [
             //     'roles' => !is_null(auth()->user()) ? auth()->user()->getRoleNames() : null,
             //     'permissions' => !is_null(auth()->user()) ? auth()->user()->getPermissionNames() : null

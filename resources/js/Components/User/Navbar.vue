@@ -150,6 +150,11 @@
                                             style="
                                                 background-image: url(/assets/wave.svg);
                                             "
+                                            v-if="
+                                                $page.props.btn_install_guide &&
+                                                $page.props.btn_install_guide
+                                                    .link
+                                            "
                                         >
                                             <div>
                                                 <p
@@ -164,11 +169,20 @@
                                                 </p>
                                             </div>
                                             <div class="w-full text-end">
-                                                <button
+                                                <a
+                                                    :href="
+                                                        $page.props
+                                                            .btn_install_guide
+                                                            .link
+                                                    "
                                                     class="text-white border border-custome-orange p-3 rounded-lg text-xs ml-auto"
                                                 >
-                                                    Installation Guide
-                                                </button>
+                                                    {{
+                                                        $page.props
+                                                            .btn_install_guide
+                                                            .value
+                                                    }}
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -338,5 +352,5 @@
 </template>
 
 <script setup>
-const props = defineProps(["radius", "activePage"]);
+const props = defineProps(["radius", "activePage", "btn_install_guide"]);
 </script>

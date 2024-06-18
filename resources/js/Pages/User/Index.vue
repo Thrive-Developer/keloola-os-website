@@ -19,15 +19,21 @@
                         </p>
                         <div class="mt-4">
                             <a
-                                href="/ready-download"
+                                v-if="button_download && button_download.link"
+                                :href="button_download.link"
                                 class="text-white bg-custome-orange p-3 rounded-lg mr-4 text-xs"
-                                >Download</a
+                                >{{ button_download.value }}</a
                             >
-                            <button
+                            <a
+                                v-if="
+                                    button_installation_instruction &&
+                                    button_installation_instruction.link
+                                "
+                                :href="button_installation_instruction.link"
                                 class="text-white border border-custome-orange p-3 rounded-lg text-xs"
                             >
-                                Installation Instructions
-                            </button>
+                                {{ button_installation_instruction.value }}
+                            </a>
                         </div>
                     </div>
                     <div
@@ -472,6 +478,8 @@ export default {
     },
     props: {
         news: Array,
+        button_download: Object,
+        button_installation_instruction: Object,
     },
     setup() {
         const fDate = (date) => {

@@ -285,20 +285,20 @@
                                         class="mt-6 flex justify-start items-center gap-4"
                                     >
                                         <a
-                                            :href="edition.download_link"
+                                            :href="`/ready-download/${os_version.slug}`"
                                             class="text-white bg-custome-orange p-3 rounded-lg mr-4 text-xs"
                                             >Download</a
                                         >
-                                        <a
-                                            href="/new-feature"
+                                        <!-- <a
+                                            :href="`/new-feature/${edition.slug}`"
                                             class="text-custome-orange text-sm"
                                             >New Features</a
                                         >
                                         <a
-                                            href="/release-notes"
+                                            :href="`/release-notes/${edition.slug}`"
                                             class="text-custome-orange text-sm"
                                             >Release Notes</a
-                                        >
+                                        > -->
                                     </div>
                                 </div>
                                 <div

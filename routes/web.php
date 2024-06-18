@@ -20,6 +20,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('testimonial', App\Http\Controllers\TestimonialController::class);
     Route::resource('os-version', App\Http\Controllers\OsVersionController::class);
     Route::resource('os-edition', App\Http\Controllers\OsEditionController::class);
+    Route::resource('sponsor', App\Http\Controllers\SponsorController::class);
+    Route::resource('sponsor-logo', App\Http\Controllers\SponsorLogoController::class);
+    Route::resource('config', App\Http\Controllers\ConfigController::class);
 });
 
 Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index'])->name('user.index');
@@ -27,14 +30,14 @@ Route::get('/contact', [\App\Http\Controllers\User\ContactController::class, 'in
 Route::get('/donors', [\App\Http\Controllers\User\DonorController::class, 'index'])->name('user.donors');
 Route::get('/download', [\App\Http\Controllers\User\DownloadController::class, 'index'])->name('user.download');
 Route::get('/download/{slug}', [\App\Http\Controllers\User\DownloadController::class, 'detail_version'])->name('user.detail_version');
+Route::get('/new-feature/{slug}', [\App\Http\Controllers\User\DownloadController::class, 'new_feature'])->name('user.newFeature');
+Route::get('/release-notes/{slug}', [\App\Http\Controllers\User\DownloadController::class, 'release_notes'])->name('user.releaseNotes');
+Route::get('/ready-download/{slug}', [\App\Http\Controllers\User\DownloadController::class, 'ready_download'])->name('user.readyDownload');
 Route::get('/get-involved', [\App\Http\Controllers\User\InvolvedController::class, 'index'])->name('user.getInvolved');
 Route::get('/partners', [\App\Http\Controllers\User\PartnerController::class, 'index'])->name('user.partners');
-Route::get('/ready-download', [\App\Http\Controllers\User\UserController::class, 'readyDownload'])->name('user.readyDownload');
-Route::get('/sponsors', [\App\Http\Controllers\User\UserController::class, 'sponsors'])->name('user.sponsors');
+Route::get('/sponsors', [\App\Http\Controllers\User\SponsorController::class, 'index'])->name('user.sponsors');
 Route::get('/tambora', [\App\Http\Controllers\User\UserController::class, 'tambora'])->name('user.tambora');
 Route::get('/team', [\App\Http\Controllers\User\UserController::class, 'team'])->name('user.team');
-Route::get('/new-feature', [\App\Http\Controllers\User\UserController::class, 'newFeature'])->name('user.newFeature');
-Route::get('/release-notes', [\App\Http\Controllers\User\UserController::class, 'releaseNotes'])->name('user.releaseNotes');
 
 Route::get('storage/images/{folder}/{filename}', function ($folder, $filename) {
     $path = storage_path('app/images/' . $folder . '/' . $filename);

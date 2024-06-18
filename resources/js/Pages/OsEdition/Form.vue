@@ -50,13 +50,11 @@
                                     <label class="form-label"
                                         >Description</label
                                     >
-
-                                    <textarea
+                                    <ckeditor
+                                        :editor="state.editor"
                                         v-model="model.description"
-                                        class="form-control"
-                                        cols="30"
-                                        rows="10"
-                                    />
+                                        :config="state.editorConfig"
+                                    ></ckeditor>
                                     <small
                                         class="form-text text-danger"
                                         v-if="errors.description"
@@ -255,7 +253,10 @@ export default {
 
         function store() {
             if (props.os_edition) {
-                router.put(`/admin/os-edition/${props.os_edition.id}`, model);
+                router.post(`/admin/os-edition/${props.os_edition.id}`, {
+                    _method: "put",
+                    ...model,
+                });
                 return;
             }
             router.post("/admin/os-edition", model);
