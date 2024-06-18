@@ -35,6 +35,8 @@ Route::get('/tambora', [\App\Http\Controllers\User\UserController::class, 'tambo
 Route::get('/team', [\App\Http\Controllers\User\UserController::class, 'team'])->name('user.team');
 Route::get('/new-feature', [\App\Http\Controllers\User\UserController::class, 'newFeature'])->name('user.newFeature');
 Route::get('/release-notes', [\App\Http\Controllers\User\UserController::class, 'releaseNotes'])->name('user.releaseNotes');
+Route::get('/faq', [\App\Http\Controllers\User\UserController::class, 'faq'])->name('user.faq');
+Route::get('/news', [\App\Http\Controllers\User\NewsController::class, 'index'])->name('user.index');
 
 Route::get('storage/images/{folder}/{filename}', function ($folder, $filename) {
     $path = storage_path('app/images/' . $folder . '/' . $filename);
