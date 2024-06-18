@@ -8,6 +8,7 @@ use Inertia\Inertia;
 use App\Models\News;
 use App\Models\Release;
 use App\Models\Edition;
+use App\Models\Faq;
 
 class UserController extends Controller
 {
@@ -104,5 +105,19 @@ class UserController extends Controller
     {
         Inertia::setRootView('user');
         return Inertia::render('User/ReleaseNotes');
+    }
+
+    public function faq(Request $request)
+    {
+        $models = Faq::all()->toArray();
+        
+        foreach ($models as $key => $value) {
+            $models[$key]['isOpen'] = false;
+        }
+        
+        Inertia::setRootView('user');
+        return Inertia::render('User/Faq', [
+            'faq' => $models
+        ]);
     }
 }

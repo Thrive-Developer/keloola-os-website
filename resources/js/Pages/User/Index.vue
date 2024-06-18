@@ -319,11 +319,7 @@
                 </div>
             </div>
             <div class="flex justify-center mt-14">
-                <button
-                    class="text-white bg-custome-orange p-3 rounded-lg mr-4 font-bold text-sm"
-                >
-                    Read more FAQs
-                </button>
+                <a href="/faq" class="text-white bg-custome-orange p-3 rounded-lg mr-4 font-bold text-sm">Read more FAQs</a>
             </div>
         </div>
     </div>
@@ -372,7 +368,7 @@
                         </div>
                     </div>
                     <p class="text-custome-orange mt-4 mb-4 text-sm">
-                        {{ item.title }}
+                        <a :href="`news/${item.slug}`">{{ item.title }}</a>
                     </p>
                     <p class="text-white text-sm leading-loose">
                         {{ truncate(stripHtmlTags(item.content)) }}

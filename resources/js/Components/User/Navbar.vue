@@ -322,13 +322,13 @@
                                 </li>
                                 <li>
                                     <a
-                                        href="#"
+                                        href="/news"
                                         :class="`text-white hover:bg-gray-700 border-b border-gray-900 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-white md:p-0 md:py-2 ${
-                                            activePage == 'links'
+                                            activePage == 'news'
                                                 ? 'md:border-b-2 md:border-custome-orange'
                                                 : ''
                                         }`"
-                                        >Links</a
+                                        >News</a
                                     >
                                 </li>
                                 <li>

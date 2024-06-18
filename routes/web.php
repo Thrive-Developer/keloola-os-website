@@ -38,6 +38,8 @@ Route::get('/partners', [\App\Http\Controllers\User\PartnerController::class, 'i
 Route::get('/sponsors', [\App\Http\Controllers\User\SponsorController::class, 'index'])->name('user.sponsors');
 Route::get('/tambora', [\App\Http\Controllers\User\UserController::class, 'tambora'])->name('user.tambora');
 Route::get('/team', [\App\Http\Controllers\User\UserController::class, 'team'])->name('user.team');
+Route::get('/faq', [\App\Http\Controllers\User\UserController::class, 'faq'])->name('user.faq');
+Route::get('/news', [\App\Http\Controllers\User\NewsController::class, 'index'])->name('user.index');
 
 Route::get('storage/images/{folder}/{filename}', function ($folder, $filename) {
     $path = storage_path('app/images/' . $folder . '/' . $filename);
