@@ -40,7 +40,7 @@
                     <p class="text-sm text-left mt-16">* If you are new to IRC (the technology used by the chatroom), please read this tutorial.</p>
                 </div>
                 
-                <div class="bg-contain bg-no-repeat bg-bottom w-auto h-72 -mt-72" style="background-image: url(/assets/wave-03\ 2.svg)"></div>
+                <div class="bg-contain bg-no-repeat bg-right-bottom w-auto h-72 -mt-72" style="background-image: url(/assets/wave-03\ 2.svg)"></div>
             </div>
 
             <div class="bg-gradient-to-r from-custome-radialred-from via-custome-radialred-to via-70% to-custome-radialred-to text-center">
