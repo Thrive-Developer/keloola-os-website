@@ -107,7 +107,7 @@
                             v-for="(item, index) in mappingData(models.data)"
                             :key="index"
                         >
-                            <td>{{ index + 1 }}</td>
+                            <td>{{ parseInt(models.from) + index }}</td>
                             <td v-for="field in fields" :key="field.key">
                                 <span v-if="typeof field.type == 'undefined'">
                                     {{ item[field.key] }}

@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Models\Config;
+use App\Models\OsVersion;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -37,6 +38,8 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         $btn_install_guide = Config::where('key', 'BUTTON_INSTALLATION_GUIDE')->first();
+        $latest_version = OsVersion::orderBy('version', 'desc')->first();
+        $before_latest_version = OsVersion::orderBy('version', 'desc')->skip(1)->first();
 
         return array_merge(parent::share($request), [
             'flash' => [
@@ -46,6 +49,8 @@ class HandleInertiaRequests extends Middleware
             'user' => auth()->user(),
             'csrf_token' => csrf_token(),
             'btn_install_guide' => $btn_install_guide,
+            'latest_version' => $latest_version,
+            'before_latest_version' => $before_latest_version
             // 'authorization' => [
             //     'roles' => !is_null(auth()->user()) ? auth()->user()->getRoleNames() : null,
             //     'permissions' => !is_null(auth()->user()) ? auth()->user()->getPermissionNames() : null

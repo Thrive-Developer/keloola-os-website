@@ -21,11 +21,16 @@
                     the provided instructions.
                 </p>
 
-                <div class="flex justify-center mt-12">
+                <div
+                    class="flex justify-center mt-12"
+                    v-if="
+                        btn_install_instruction && btn_install_instruction.link
+                    "
+                >
                     <a
-                        href="https://www.keloola.com/coming-soon/"
+                        :href="btn_install_instruction.link"
                         class="text-white bg-custome-orange p-3 rounded-lg mr-4 text-xs"
-                        >Installation Instructions</a
+                        >{{ btn_install_instruction.value }}</a
                     >
                 </div>
             </div>
@@ -174,6 +179,7 @@ export default {
     props: {
         os_version: Object,
         editions: Array,
+        btn_install_instruction: Object,
     },
 };
 </script>

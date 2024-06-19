@@ -18,7 +18,12 @@
         <div class="container-xl">
             <div class="row row-deck row-cards">
                 <div class="col-12">
-                    <Table :models="models" :route="route" :fields="fields" />
+                    <Table
+                        :models="models"
+                        :route="route"
+                        :fields="fields"
+                        :isDelete="false"
+                    />
                 </div>
             </div>
         </div>

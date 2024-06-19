@@ -50,11 +50,13 @@
                                     <label class="form-label"
                                         >Description</label
                                     >
-                                    <ckeditor
-                                        :editor="state.editor"
+
+                                    <textarea
                                         v-model="model.description"
-                                        :config="state.editorConfig"
-                                    ></ckeditor>
+                                        class="form-control"
+                                        cols="30"
+                                        rows="10"
+                                    />
                                     <small
                                         class="form-text text-danger"
                                         v-if="errors.description"

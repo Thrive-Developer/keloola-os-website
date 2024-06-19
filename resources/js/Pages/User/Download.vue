@@ -61,7 +61,7 @@
                                             scope="col"
                                             class="px-4 py-2 border border-black min-w-40"
                                         >
-                                            PACKAGE ASE
+                                            PACKAGE USE
                                         </th>
                                         <th
                                             scope="col"
@@ -99,7 +99,11 @@
                                                 ) in row.os_editions"
                                                 :key="index"
                                             >
-                                                {{ edition.name }}
+                                                <a
+                                                    :href="`/ready-download/${row.slug}?edition=${edition.slug}`"
+                                                >
+                                                    {{ edition.name }}
+                                                </a>
                                             </p>
                                         </td>
                                         <td

@@ -35,13 +35,13 @@ class ConfigSeeder extends Seeder
                 'key' => "BUTTON_CHAT_ROOM",
                 'value' => 'Chat',
                 'type' => 'BUTTON',
-                'link' => ''
+                'link' => 'https://discord.com/invite/MJeZsPacuY'
             ],
             [
                 'key' => "BUTTON_GET_INVOLVED",
                 'value' => 'Go',
                 'type' => 'BUTTON',
-                'link' => ''
+                'link' => 'https://ticket.thrive.co.id/'
             ],
             [
                 'key' => "BUTTON_DONATION_USD",
@@ -74,6 +74,12 @@ class ConfigSeeder extends Seeder
                 'link' => ''
             ],
             [
+                'key' => "IMAGE_BARCODE_DONATION",
+                'value' => '',
+                'type' => 'IMAGE',
+                'link' => ''
+            ],
+            [
                 'key' => "TEXT_HERO_DONATION",
                 'value' => '<p class="text-sm leading-loose">We believe Linux Mint can gather the momentum and the community <br>
                         necessary to fund itself entirely through donations, sponsoring and<br>
@@ -96,7 +102,12 @@ class ConfigSeeder extends Seeder
         ];
 
         foreach ($data as $item) {
-            \App\Models\Config::updateOrCreate($item);
+            \App\Models\Config::updateOrCreate(
+                [
+                    'key' => $item['key']
+                ],
+                $item
+            );
         }
     }
 }
