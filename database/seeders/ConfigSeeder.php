@@ -56,26 +56,20 @@ class ConfigSeeder extends Seeder
                 'link' => ''
             ],
             [
-                'key' => "BUTTON_PATREON",
-                'value' => 'Become a patron',
+                'key' => "BUTTON_DONATION_OTHER",
+                'value' => 'Other',
                 'type' => 'BUTTON',
                 'link' => ''
             ],
             [
-                'key' => "BUTTON_PATREON",
-                'value' => 'Become a patron',
-                'type' => 'BUTTON',
+                'key' => "IMAGE_BITCOIN_DONATION",
+                'value' => '',
+                'type' => 'IMAGE',
                 'link' => ''
             ],
             [
                 'key' => "IMAGE_HERO_DONATION",
                 'value' => '/assets/donations.svg',
-                'type' => 'IMAGE',
-                'link' => ''
-            ],
-            [
-                'key' => "IMAGE_BARCODE_DONATION",
-                'value' => '',
                 'type' => 'IMAGE',
                 'link' => ''
             ],

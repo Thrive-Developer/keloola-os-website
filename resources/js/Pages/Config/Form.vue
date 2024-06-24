@@ -81,6 +81,32 @@
                                         >
                                     </div>
                                 </span>
+                                <span v-else-if="config.type == 'IMAGE'">
+                                    <div class="mb-3">
+                                        <label class="form-label">Value</label>
+                                        <input
+                                            type="file"
+                                            class="form-control"
+                                            autocomplete="off"
+                                            @input="updateImage($event)"
+                                        />
+                                        <img
+                                            v-if="state.currentImage"
+                                            :src="state.currentImage"
+                                            alt="product image"
+                                            :style="{
+                                                width: '250px',
+                                                height: '250px',
+                                            }"
+                                            class="img-thumbnail mt-3"
+                                        />
+                                        <small
+                                            class="form-text text-danger"
+                                            v-if="errors.image"
+                                            >{{ errors.image }}</small
+                                        >
+                                    </div>
+                                </span>
                             </div>
                             <div class="card-footer">
                                 <button
@@ -162,7 +188,10 @@ export default {
 
         function store() {
             if (props.config) {
-                router.put(`/admin/config/${props.config.id}`, model);
+                router.post(`/admin/config/${props.config.id}`, {
+                    _method: "put",
+                    ...model,
+                });
                 return;
             }
             router.post("/admin/config", model);
@@ -180,11 +209,24 @@ export default {
             };
         }
 
+        function updateImage(event) {
+            const file = event.target.files[0];
+            model.value = file;
+
+            const reader = new FileReader();
+            reader.onload = function () {
+                state.currentImage = reader.result;
+            };
+
+            reader.readAsDataURL(file);
+        }
+
         return {
             model,
             store,
             handleBackPage,
             state,
+            updateImage,
         };
     },
 };

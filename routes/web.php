@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('sponsor', App\Http\Controllers\SponsorController::class);
     Route::resource('sponsor-logo', App\Http\Controllers\SponsorLogoController::class);
     Route::resource('config', App\Http\Controllers\ConfigController::class);
+    Route::resource('donor', App\Http\Controllers\DonorController::class);
 });
 
 Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index'])->name('user.index');

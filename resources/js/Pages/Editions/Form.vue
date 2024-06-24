@@ -18,22 +18,20 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body border-bottom py-3">
-                                
-                <div class="mb-3">
-                    <label class="form-label">Nama</label>
-                    <input
-                        type="text"
-                        class="form-control"
-                        autocomplete="off"
-                        v-model="model.nama"
-                    />
-                    <small
-                        class="form-text text-danger"
-                        v-if="errors.nama"
-                        >{{ errors.nama }}</small
-                    >
-                </div>
-                
+                                <div class="mb-3">
+                                    <label class="form-label">Nama</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        autocomplete="off"
+                                        v-model="model.nama"
+                                    />
+                                    <small
+                                        class="form-text text-danger"
+                                        v-if="errors.nama"
+                                        >{{ errors.nama }}</small
+                                    >
+                                </div>
                             </div>
                             <div class="card-footer">
                                 <button
@@ -73,7 +71,7 @@ export default {
 
     setup(props) {
         const model = reactive({
-            nama: props.editions ? props.editions.nama : '',
+            nama: props.editions ? props.editions.nama : "",
         });
 
         function store() {

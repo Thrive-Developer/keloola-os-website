@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class Config extends Model
 {
@@ -13,6 +15,7 @@ class Config extends Model
 
     protected $table = 'config';
 
+    const ATTACHMENT_PATH = 'images/configs';
     /**
      * The attributes that are mass assignable.
      *
@@ -58,5 +61,39 @@ class Config extends Model
         }
 
         return $modelQuery;
+    }
+
+    public static function uploadAttachment($request)
+    {
+        try {
+            if ($request->hasFile('value')) {
+                $file_name = date('dmYHis') . Str::random(5);
+                $file_extension = $request->value->extension();
+
+                $attachment_filename = $file_name . '.' . $file_extension;
+
+                $request->value->storeAs(self::ATTACHMENT_PATH, $attachment_filename);
+                return url('storage/images/configs/' . $attachment_filename);
+            }
+
+            return null;
+        } catch (\Exception $e) {
+            throw $e;
+        }
+    }
+
+    public static function deleteAttachment($filename)
+    {
+        try {
+            if (Storage::exists(self::ATTACHMENT_PATH . '/' . $filename)) {
+                Storage::delete(self::ATTACHMENT_PATH . '/' . $filename);
+                return true;
+            }
+
+
+            return false;
+        } catch (\Exception $e) {
+            throw $e;
+        }
     }
 }

@@ -1,7 +1,7 @@
 <template>
     <div>
         <select ref="selectElement">
-            <option value="0" selected disabled>- Select -</option>
+            <option value="0" selected disabled></option>
             <option
                 v-for="option in options"
                 :key="option.value"

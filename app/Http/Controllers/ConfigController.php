@@ -21,7 +21,7 @@ class ConfigController extends Controller
 
     public function create()
     {
-    	return Inertia::render('Config/Form');
+        return Inertia::render('Config/Form');
     }
 
     public function store(ModelRequest $request, Model $model)
@@ -47,7 +47,7 @@ class ConfigController extends Controller
         ]);
     }
 
-    public function update(ModelRequest $request, Model $config)
+    public function update(Request $request, Model $config)
     {
         /*
          * When updating unique column we must use different rules as store method.
@@ -55,11 +55,25 @@ class ConfigController extends Controller
          */
         $validation_rules = [
             'key' => 'required',
-'value' => 'required',
+            'value' => 'required',
         ];
 
+        $data = $request->all();
 
-        if ($request->validate($validation_rules) && $config->saveModel($request->all())) {
+        if ($config->type == 'IMAGE') {
+            $validation_rules['value'] = 'required|image|mimes:jpeg,png,jpg,gif,svg|max:10000';
+
+            if ($request->hasFile('value')) {
+                $data['value'] = Model::uploadAttachment($request);
+
+                $filename = explode('/', $config->value);
+                $filename = $filename[count($filename) - 1];
+                Model::deleteAttachment($filename);
+            }
+        }
+
+
+        if ($request->validate($validation_rules) && $config->saveModel($data)) {
             return Redirect::route('config.index')->with('success', 'Data berhasil diupdate');
         } else {
             return Redirect::route('config.index')->with('error', 'Data berhasil diupdate');

@@ -16,35 +16,14 @@
                     <div class="lg:flex lg:justify-between items-start mt-12">
                         <div class="w-full lg:w-1/2">
                             <img
-                                src="assets/donations.svg"
+                                v-if="image_hero && image_hero.value"
+                                :src="image_hero.value"
                                 alt="image"
                                 class="mx-auto w-10/12"
                             />
                         </div>
                         <div class="w-full lg:w-1/2 mt-6 lg:mt-0">
-                            <p class="text-sm leading-loose">
-                                We believe Linux Mint can gather the momentum
-                                and the community <br />
-                                necessary to fund itself entirely through
-                                donations, sponsoring and<br />
-                                advertisement without the need to engage in
-                                commercial activities and<br />
-                                without focusing on anything else than improving
-                                the distribution itself.<br />
-                            </p>
-                            <p class="my-4 text-sm leading-loose">
-                                The donations we receive range from a single
-                                dollar to a couple of hundreds.<br />
-                                The important thing is for people to give
-                                something, and for us to generate the<br />
-                                income that will let us work and succeed on this
-                                project, month after month.<br />
-                            </p>
-                            <p class="text-sm leading-loose">
-                                If you want to help and if you can do so please
-                                make a donation to the project<br />
-                                and encourage others to do so.
-                            </p>
+                            <span v-html="text_hero.value"></span>
                         </div>
                     </div>
                 </div>
@@ -64,9 +43,7 @@
                         <h1 class="text-custome-orange text-2xl font-semibold">
                             How to donate
                         </h1>
-                        <p class="text-xl mt-4 font-medium">
-                            Paypal or Debit/Credit Card
-                        </p>
+                        <p class="text-xl mt-4 font-medium">Bank Transfer</p>
                         <p class="text-sm mt-2">
                             You can make a donation is $USD or in IDR
                         </p>
@@ -95,29 +72,29 @@
                                 {{ btn_idr.value }}
                             </a>
                         </div>
-                        <p class="text-sm mt-2">
+                        <!-- <p class="text-sm mt-2">
                             To donate in another currency choose to donate in
                             Euro. Paypal will <br />
                             automatically convert the currency during the
                             transaction.
-                        </p>
+                        </p> -->
                     </div>
                     <div class="w-full lg:w-1/2 mt-6 lg:mt-0">
-                        <p class="text-xl font-medium">Patreon</p>
+                        <p class="text-xl font-medium">Other</p>
                         <p class="text-sm mt-2">
-                            Alternatively you can set up a monthly donation via
-                            Patreon:
+                            For donations using other payment methods, please
+                            click the link below
                         </p>
                         <button
                             class="bg-custome-orange text-sm p-2 rounded-lg mt-2 flex justify-start items-center"
-                            v-if="btn_patreon && btn_patreon.link"
-                            @click="openPatreon(btn_patreon.link)"
+                            v-if="btn_other && btn_other.link"
+                            @click="openOther(btn_other.link)"
                         >
                             <img
                                 src="assets/handshake.svg"
                                 alt="handshake"
                                 class="pr-2 mr-2 border-r h-4"
-                            />{{ btn_patreon.value }}
+                            />{{ btn_other.value }}
                         </button>
                     </div>
                 </div>
@@ -131,7 +108,7 @@
                 <div class="-mt-80 container mx-auto px-4 sm:px-16 py-10">
                     <p class="text-xl mt-4 font-medium">Crypto-currencies</p>
                     <p class="text-sm mt-2">
-                        Or you can donate anonymously to Linux Mint using
+                        Or you can donate anonymously to Keloola OS using
                         crypto-currencies.
                     </p>
                     <div class="flex justify-start items-center mt-3">
@@ -153,17 +130,22 @@
                                 src="assets/btc-white.svg"
                                 alt="btc-white"
                                 class="ml-1 h-4"
-                            />itcoin use the following address:
+                            />Bitcoin use the following address:
                         </p>
                     </div>
-                    <div
-                        class="h-52 w-52 border rounded-lg mx-auto mt-14"
-                    ></div>
+                    <div class="h-52 w-52 border rounded-lg mx-auto mt-14">
+                        <img
+                            v-if="image_bitcoin && image_bitcoin.value"
+                            :src="image_bitcoin.value"
+                            alt="btc"
+                            class="h-52 w-52"
+                        />
+                    </div>
                     <p class="text-sm mt-9">
-                        Note: Patrons and crypto-donations are anonymous and not
-                        listed on this page. Paypal donations are
-                        semi-anonymous, by default only your first name and the
-                        first letter of your surname will appear.
+                        Note: Crypto-donations are anonymous and not listed on
+                        this page. Bank transfer donations are semi-anonymous,
+                        by default only your first name and the first letter of
+                        your username will appear.
                     </p>
                 </div>
             </div>
@@ -208,202 +190,31 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr
+                                    v-for="(latest, index) in latest_donor"
+                                    :key="index"
+                                >
                                     <td class="px-6 py-4 border border-black">
-                                        2023-10-20
+                                        {{ latest.date }}
                                     </td>
                                     <td
                                         class="px-6 py-4 border border-black text-left"
                                     >
                                         <div class="flex items-center">
-                                            <div
-                                                class="w-6 h-4 bg-white mr-4"
-                                            ></div>
-                                            Country
+                                            <div class="w-6 h-4 bg-white mr-4">
+                                                <img
+                                                    :src="`/flags/${toLower(
+                                                        latest.r_country
+                                                            .country_iso
+                                                    )}.png`"
+                                                    :alt="latest.country"
+                                                />
+                                            </div>
+                                            <p>{{ latest.country }}</p>
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 border border-black">
-                                        $ 10
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 border border-black">
-                                        2023-10-20
-                                    </td>
-                                    <td
-                                        class="px-6 py-4 border border-black text-left"
-                                    >
-                                        <div class="flex items-center">
-                                            <div
-                                                class="w-6 h-4 bg-white mr-4"
-                                            ></div>
-                                            Country
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 border border-black">
-                                        $ 10
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 border border-black">
-                                        2023-10-20
-                                    </td>
-                                    <td
-                                        class="px-6 py-4 border border-black text-left"
-                                    >
-                                        <div class="flex items-center">
-                                            <div
-                                                class="w-6 h-4 bg-white mr-4"
-                                            ></div>
-                                            Country
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 border border-black">
-                                        $ 10
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 border border-black">
-                                        2023-10-20
-                                    </td>
-                                    <td
-                                        class="px-6 py-4 border border-black text-left"
-                                    >
-                                        <div class="flex items-center">
-                                            <div
-                                                class="w-6 h-4 bg-white mr-4"
-                                            ></div>
-                                            Country
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 border border-black">
-                                        $ 10
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 border border-black">
-                                        2023-10-20
-                                    </td>
-                                    <td
-                                        class="px-6 py-4 border border-black text-left"
-                                    >
-                                        <div class="flex items-center">
-                                            <div
-                                                class="w-6 h-4 bg-white mr-4"
-                                            ></div>
-                                            Country
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 border border-black">
-                                        $ 10
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 border border-black">
-                                        2023-10-20
-                                    </td>
-                                    <td
-                                        class="px-6 py-4 border border-black text-left"
-                                    >
-                                        <div class="flex items-center">
-                                            <div
-                                                class="w-6 h-4 bg-white mr-4"
-                                            ></div>
-                                            Country
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 border border-black">
-                                        $ 10
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 border border-black">
-                                        2023-10-20
-                                    </td>
-                                    <td
-                                        class="px-6 py-4 border border-black text-left"
-                                    >
-                                        <div class="flex items-center">
-                                            <div
-                                                class="w-6 h-4 bg-white mr-4"
-                                            ></div>
-                                            Country
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 border border-black">
-                                        $ 10
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 border border-black">
-                                        2023-10-20
-                                    </td>
-                                    <td
-                                        class="px-6 py-4 border border-black text-left"
-                                    >
-                                        <div class="flex items-center">
-                                            <div
-                                                class="w-6 h-4 bg-white mr-4"
-                                            ></div>
-                                            Country
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 border border-black">
-                                        $ 10
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 border border-black">
-                                        2023-10-20
-                                    </td>
-                                    <td
-                                        class="px-6 py-4 border border-black text-left"
-                                    >
-                                        <div class="flex items-center">
-                                            <div
-                                                class="w-6 h-4 bg-white mr-4"
-                                            ></div>
-                                            Country
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 border border-black">
-                                        $ 10
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 border border-black">
-                                        2023-10-20
-                                    </td>
-                                    <td
-                                        class="px-6 py-4 border border-black text-left"
-                                    >
-                                        <div class="flex items-center">
-                                            <div
-                                                class="w-6 h-4 bg-white mr-4"
-                                            ></div>
-                                            Country
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 border border-black">
-                                        $ 10
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="px-6 py-4 border border-black">
-                                        2023-10-20
-                                    </td>
-                                    <td
-                                        class="px-6 py-4 border border-black text-left"
-                                    >
-                                        <div class="flex items-center">
-                                            <div
-                                                class="w-6 h-4 bg-white mr-4"
-                                            ></div>
-                                            Country
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 border border-black">
-                                        $ 10
+                                        $ {{ latest.amount }}
                                     </td>
                                 </tr>
                             </tbody>
@@ -439,12 +250,12 @@
                                         >
                                             COUNTRY
                                         </th>
-                                        <th
+                                        <!-- <th
                                             scope="col"
                                             class="px-6 py-4 border border-black min-w-40 text-left"
                                         >
                                             CONTRIBUTION
-                                        </th>
+                                        </th> -->
                                         <th
                                             scope="col"
                                             class="px-6 py-4 border border-black min-w-40"
@@ -460,254 +271,45 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr
+                                        v-for="(top10, index) in top10_country"
+                                        :key="index"
+                                    >
                                         <td
                                             class="px-6 py-4 border border-black text-left"
                                         >
                                             <div class="flex items-center">
                                                 <div
                                                     class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
+                                                >
+                                                    <img
+                                                        :src="`/flags/${toLower(
+                                                            top10.r_country
+                                                                .country_iso
+                                                        )}.png`"
+                                                        :alt="top10.country"
+                                                    />
+                                                </div>
+                                                <p>{{ top10.country }}</p>
                                             </div>
                                         </td>
+                                        <!-- <td
+                                            class="px-6 py-4 border border-black"
+                                        >
+                                            {{ top10.date }}
+                                        </td> -->
                                         <td
                                             class="px-6 py-4 border border-black"
                                         >
-                                            2023-10-20
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        ></td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 10
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 border border-black text-left"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
-                                            </div>
+                                            $
+                                            {{
+                                                parseFloat(top10.avg).toFixed(2)
+                                            }}
                                         </td>
                                         <td
                                             class="px-6 py-4 border border-black"
                                         >
-                                            2023-10-20
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        ></td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 10
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 border border-black text-left"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            2023-10-20
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        ></td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 10
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 border border-black text-left"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            2023-10-20
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        ></td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 10
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 border border-black text-left"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            2023-10-20
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        ></td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 10
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 border border-black text-left"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            2023-10-20
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        ></td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 10
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 border border-black text-left"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            2023-10-20
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        ></td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 10
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 border border-black text-left"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            2023-10-20
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        ></td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 10
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 border border-black text-left"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            2023-10-20
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        ></td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 10
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 border border-black text-left"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            2023-10-20
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        ></td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 10
+                                            $ {{ top10.max }}
                                         </td>
                                     </tr>
                                 </tbody>
@@ -753,180 +355,39 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr
+                                        v-for="(
+                                            top100, index
+                                        ) in top100_country_count_donation"
+                                        :key="index"
+                                    >
                                         <td
                                             class="px-6 py-4 border border-black text-left"
                                         >
                                             <div class="flex items-center">
                                                 <div
                                                     class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
+                                                >
+                                                    <img
+                                                        :src="`/flags/${toLower(
+                                                            top100.r_country
+                                                                .country_iso
+                                                        )}.png`"
+                                                        :alt="top100.country"
+                                                    />
+                                                </div>
+                                                <p>{{ top100.country }}</p>
                                             </div>
                                         </td>
                                         <td
                                             class="px-6 py-4 border border-black"
                                         >
-                                            24
+                                            {{ top100.total }}
                                         </td>
                                         <td
                                             class="px-6 py-4 border border-black"
                                         >
-                                            $ 1200
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 border border-black text-left"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            1
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 1200
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 border border-black text-left"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            5
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 1200
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 border border-black text-left"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            8
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 1200
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 border border-black text-left"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            17
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 1200
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 border border-black text-left"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            22
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 1200
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 border border-black text-left"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            24
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 1200
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 border border-black text-left"
-                                        >
-                                            <div class="flex items-center">
-                                                <div
-                                                    class="w-6 h-4 bg-white mr-4"
-                                                ></div>
-                                                Country
-                                            </div>
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            24
-                                        </td>
-                                        <td
-                                            class="px-6 py-4 border border-black"
-                                        >
-                                            $ 1200
+                                            $ {{ top100.sum }}
                                         </td>
                                     </tr>
                                 </tbody>
@@ -962,14 +423,24 @@ export default {
     props: {
         btn_usd: Object,
         btn_idr: Object,
-        btn_patreon: Object,
+        btn_other: Object,
+        image_hero: Object,
+        text_hero: Object,
+        image_bitcoin: Object,
+        latest_donor: Array,
+        top10_country: Array,
+        top100_country_count_donation: Array,
     },
     setup() {
-        function openPatreon(link) {
+        function openOther(link) {
             window.open(link, "_blank");
         }
 
-        return { openPatreon };
+        function toLower(text) {
+            return text.toLowerCase();
+        }
+
+        return { openOther, toLower };
     },
 };
 </script>
