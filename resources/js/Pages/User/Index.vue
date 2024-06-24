@@ -324,18 +324,39 @@
         </div>
     </div>
 
-    <div class="bg-custome-gray">
+    <div class="bg-custome-gray text-white">
         <div
             class="bg-contain bg-no-repeat bg-left-top h-72 pt-10 z-0"
             style="background-image: url(/assets/wave-03\ 6.svg)"
         ></div>
         <div class="-mt-48 mb-28">
-            <p class="text-sm italic z-10 text-white text-center">
+            <p class="text-sm italic z-10 text-white text-center mb-8">
                 From the press
             </p>
+            <div class="px-32">
+                <swiper 
+                    :cssMode="true"
+                    :navigation="true"
+                    :pagination="true"
+                    :mousewheel="true"
+                    :keyboard="true" :slides-per-view="1" :space-between="50" :modules="modules" @swiper="onSwiper" @slideChange="onSlideChange">
+                    <swiper-slide v-for="(row, index) in testimonial" :key="index" class="px-32 text-center text-xl leading-loose">
+                        <p >{{row.description}}</p>
+                        <div class="flex justify-center">
+                            <img
+                                src="/assets/quotes.svg"
+                                class="w-[20px] h-[20px] text-white my-8"
+                                alt="quotes"
+                            />
+                        </div>
+                        <p class="text-base">{{row.name}}</p>
+                        <p class="text-sm">{{row.from}}</p>
+                    </swiper-slide>
+                </swiper>
+            </div>
         </div>
         <div
-            class="bg-contain bg-no-repeat bg-right-bottom h-72 pt-10 z-0"
+            class="bg-contain bg-no-repeat bg-right-bottom h-72 z-0 -mt-72"
             style="background-image: url(/assets/wave-03\ 2.svg)"
         ></div>
     </div>
@@ -464,6 +485,14 @@ import Navbar from "../../Components/User/Navbar.vue";
 import Footer from "../../Components/User/Footer.vue";
 import UserLayout from "../../Layouts/User.vue";
 import dayjs from "dayjs";
+import { Swiper, SwiperSlide } from 'swiper/vue';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+// import required modules
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 
 export default {
     name: "IndexUser",
@@ -471,9 +500,12 @@ export default {
     components: {
         Navbar,
         Footer,
+        Swiper,
+        SwiperSlide,
     },
     props: {
         news: Array,
+        testimonial: Array,
         button_download: Object,
         button_installation_instruction: Object,
     },
@@ -492,11 +524,53 @@ export default {
             return html.replace(/<[^>]*>/g, "");
         }
 
+        const onSwiper = (swiper) => {
+            console.log(swiper);
+        };
+        const onSlideChange = () => {
+            console.log('slide change');
+        };
+
         return {
             fDate,
             truncate,
             stripHtmlTags,
+            onSwiper,
+            onSlideChange,
+            modules: [Navigation, Pagination, Mousewheel, Keyboard],
         };
     },
 };
 </script>
+
+<style>
+/* Custom CSS for Swiper Navigation */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #fff; /* Warna teks putih */
+    border : #fff;
+    border-radius: 50%; /* Membuat tombol berbentuk lingkaran */
+    width: 40px; /* Lebar tombol */
+    height: 40px; /* Tinggi tombol */
+    display: flex; /* Membuat konten fleksibel */
+    align-items: center; /* Posisi teks ke tengah tombol */
+    justify-content: center; /* Posisi teks ke tengah tombol */
+    font-size: 20px; /* Ukuran font teks */
+    cursor: pointer; /* Pointer cursor saat dihover */
+    transition: background-color 0.3s, transform 0.2s; /* Animasi perubahan background dan transform */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: scale(1.1); /* Memperbesar tombol saat dihover */
+}
+
+.swiper-button-next {
+  right: 10px; /* Jarak dari sisi kanan */
+}
+
+.swiper-button-prev {
+  left: 10px; /* Jarak dari sisi kiri */
+}
+    
+</style>

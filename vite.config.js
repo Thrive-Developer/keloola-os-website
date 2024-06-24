@@ -37,4 +37,7 @@ export default defineConfig({
         const pages = import.meta.glob("./Pages/**/*.vue", { eager: true });
         return pages[`./Pages/${name}.vue`];
     },
+    optimizeDeps: {
+        include: ['swiper']
+    },
 });
