@@ -113,11 +113,24 @@
                                                 </p>
                                                 <div
                                                     class="flex items-center justify-start mt-2"
+                                                    v-if="
+                                                        $page.props
+                                                            .latest_version
+                                                    "
                                                 >
                                                     <a
-                                                        href="/ready-download"
+                                                        :href="`/ready-download/${$page.props.latest_version.slug}`"
                                                         class="text-xs hover:text-custome-orange text-white block"
-                                                        >Keloola OS 1.0</a
+                                                        >{{
+                                                            $page.props
+                                                                .latest_version
+                                                                .code_name
+                                                        }}
+                                                        {{
+                                                            $page.props
+                                                                .latest_version
+                                                                .version
+                                                        }}</a
                                                     >
                                                     <span
                                                         class="bg-custome-orange rounded-md ml-1 text-xs px-2"
@@ -133,9 +146,22 @@
                                                 </p>
                                                 <div class="mt-2">
                                                     <a
-                                                        href="/tambora"
+                                                        v-if="
+                                                            $page.props
+                                                                .before_latest_version
+                                                        "
+                                                        :href="`/download/${$page.props.before_latest_version.slug}`"
                                                         class="text-xs hover:text-custome-orange text-white block"
-                                                        >Tambora 1.0</a
+                                                        >{{
+                                                            $page.props
+                                                                .before_latest_version
+                                                                .code_name
+                                                        }}
+                                                        {{
+                                                            $page.props
+                                                                .before_latest_version
+                                                                .version
+                                                        }}</a
                                                     >
                                                     <a
                                                         href="/download"
@@ -149,6 +175,11 @@
                                             class="bg-cover bg-no-repeat bg-left-top h-36 w-full pt-10 bg-black z-0 text-white grid grid-cols-2 px-4 hidden md:flex"
                                             style="
                                                 background-image: url(/assets/wave.svg);
+                                            "
+                                            v-if="
+                                                $page.props.btn_install_guide &&
+                                                $page.props.btn_install_guide
+                                                    .link
                                             "
                                         >
                                             <div>
@@ -164,11 +195,20 @@
                                                 </p>
                                             </div>
                                             <div class="w-full text-end">
-                                                <button
+                                                <a
+                                                    :href="
+                                                        $page.props
+                                                            .btn_install_guide
+                                                            .link
+                                                    "
                                                     class="text-white border border-custome-orange p-3 rounded-lg text-xs ml-auto"
                                                 >
-                                                    Installation Guide
-                                                </button>
+                                                    {{
+                                                        $page.props
+                                                            .btn_install_guide
+                                                            .value
+                                                    }}
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

@@ -337,10 +337,10 @@
                             "
                         ></span>
                         <div class="d-none d-xl-block ps-2">
-                            <div>Paweł Kuna</div>
-                            <div class="mt-1 small text-secondary">
+                            <div>{{ $page.props.user.name }}</div>
+                            <!-- <div class="mt-1 small text-secondary">
                                 UI Designer
-                            </div>
+                            </div> -->
                         </div>
                     </a>
                     <div
@@ -355,7 +355,7 @@
                         <a href="./settings.html" class="dropdown-item"
                             >Settings</a
                         >
-                        <a href="./sign-in.html" class="dropdown-item"
+                        <a href="#" @click="logout" class="dropdown-item"
                             >Logout</a
                         >
                     </div>
@@ -411,7 +411,16 @@
 </template>
 
 <script>
+import { router } from "@inertiajs/vue3";
+
 export default {
     name: "Navbar",
+    setup() {
+        function logout() {
+            router.post("/admin/logout");
+        }
+
+        return { logout };
+    },
 };
 </script>

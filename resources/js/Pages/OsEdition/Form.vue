@@ -255,7 +255,10 @@ export default {
 
         function store() {
             if (props.os_edition) {
-                router.put(`/admin/os-edition/${props.os_edition.id}`, model);
+                router.post(`/admin/os-edition/${props.os_edition.id}`, {
+                    _method: "put",
+                    ...model,
+                });
                 return;
             }
             router.post("/admin/os-edition", model);

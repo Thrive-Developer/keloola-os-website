@@ -4,14 +4,14 @@
             <!-- Content -->
             <div class="container mx-auto px-4 sm:px-16 -mt-36">
                 <h1 class="text-custome-orange text-3xl font-semibold">
-                    New Feature
+                    {{ news.title }}
                 </h1>
             </div>
             <div
                 class="bg-gradient-to-r from-[#413E1E] via-custome-gray via-40% to-custome-gray mt-3 py-12 text-white w-full"
             >
                 <div class="container mx-auto px-4 sm:px-16 w-full">
-                    <span v-html="os_edition.new_features"></span>
+                    <span v-html="news.content"></span>
                 </div>
             </div>
             <!-- End Content -->
@@ -34,7 +34,7 @@ export default {
         Footer,
     },
     props: {
-        os_edition: Object,
+        news: Object,
     },
 };
 </script>
