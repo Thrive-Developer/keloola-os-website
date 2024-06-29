@@ -112,6 +112,13 @@
                                 <span v-if="typeof field.type == 'undefined'">
                                     {{ item[field.key] }}
                                 </span>
+                                <span v-if="field.type == 'link'">
+                                    <a
+                                        :href="item[field.link]"
+                                        target="_blank"
+                                        >{{ item[field.key] }}</a
+                                    >
+                                </span>
                                 <span v-if="field.type == 'img'">
                                     <img
                                         :src="item[field.key]"

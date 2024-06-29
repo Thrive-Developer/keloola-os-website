@@ -6,22 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 
-class Config extends Model
+class CustomPage extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
-    protected $table = 'config';
+    protected $table = 'custom_page';
 
-    const ATTACHMENT_PATH = 'images/configs';
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
-    protected $fillable = ['key', 'value', 'type', 'link', 'page', 'section'];
+    protected $fillable = ['title', 'slug', 'content'];
 
     public function saveModel($data)
     {
@@ -44,12 +41,14 @@ class Config extends Model
         $params['page'] = 1;
         $params['limit'] = $params['limit'] ?? 10;
 
+        $modelQuery->latest();
+
         if (($sort_data = Arr::get($params, 'sort', false)) !== false) {
             $modelQuery->orderBy($sort_data['column'], $sort_data['order']);
         }
 
         if (($search = Arr::get($params, 'search', false)) !== false) {
-            // $modelQuery->whereRaw('LOWER(title) LIKE ?', ['%' . strtolower($search) . '%']);
+            $modelQuery->whereRaw('LOWER(title) LIKE ?', ['%' . strtolower($search) . '%']);
         }
 
         if (!$raw) {
@@ -61,39 +60,5 @@ class Config extends Model
         }
 
         return $modelQuery;
-    }
-
-    public static function uploadAttachment($request)
-    {
-        try {
-            if ($request->hasFile('value')) {
-                $file_name = date('dmYHis') . Str::random(5);
-                $file_extension = $request->value->extension();
-
-                $attachment_filename = $file_name . '.' . $file_extension;
-
-                $request->value->storeAs(self::ATTACHMENT_PATH, $attachment_filename);
-                return url('storage/images/configs/' . $attachment_filename);
-            }
-
-            return null;
-        } catch (\Exception $e) {
-            throw $e;
-        }
-    }
-
-    public static function deleteAttachment($filename)
-    {
-        try {
-            if (Storage::exists(self::ATTACHMENT_PATH . '/' . $filename)) {
-                Storage::delete(self::ATTACHMENT_PATH . '/' . $filename);
-                return true;
-            }
-
-
-            return false;
-        } catch (\Exception $e) {
-            throw $e;
-        }
     }
 }

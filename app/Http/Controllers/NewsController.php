@@ -29,7 +29,7 @@ class NewsController extends Controller
     {
         $data = $request->all();
         $data['slug'] = Str::slug($data['title']);
-        if($model->where('slug', $data['slug'])->exists()) {
+        if ($model->where('slug', $data['slug'])->exists()) {
             $data['slug'] = $data['slug'] . '-' . time();
         }
         if ($model->saveModel($data)) {
@@ -66,7 +66,7 @@ class NewsController extends Controller
 
         $data = $request->all();
         $data['slug'] = Str::slug($data['title']);
-        if($news->where('slug', $data['slug'])->exists()) {
+        if ($news->where('slug', $data['slug'])->whereNot('id', $news->id)->exists()) {
             $data['slug'] = $data['slug'] . '-' . time();
         }
         if ($request->validate($validation_rules) && $news->saveModel($data)) {

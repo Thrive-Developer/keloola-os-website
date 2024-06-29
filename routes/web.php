@@ -24,6 +24,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('sponsor-logo', App\Http\Controllers\SponsorLogoController::class);
     Route::resource('config', App\Http\Controllers\ConfigController::class);
     Route::resource('donor', App\Http\Controllers\DonorController::class);
+    Route::resource('custom-page', App\Http\Controllers\CustomPageController::class);
 });
 
 Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index'])->name('user.index');
@@ -42,6 +43,7 @@ Route::get('/team', [\App\Http\Controllers\User\UserController::class, 'team'])-
 Route::get('/faq', [\App\Http\Controllers\User\UserController::class, 'faq'])->name('user.faq');
 Route::get('/news', [\App\Http\Controllers\User\NewsController::class, 'index'])->name('user.index');
 Route::get('/news/{slug}', [\App\Http\Controllers\User\NewsController::class, 'show'])->name('user.show');
+Route::get('/page/{slug}', [\App\Http\Controllers\User\CustomPageController::class, 'show'])->name('page.show');
 
 Route::get('storage/images/{folder}/{filename}', function ($folder, $filename) {
     $path = storage_path('app/images/' . $folder . '/' . $filename);

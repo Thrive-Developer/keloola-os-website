@@ -30,8 +30,10 @@
                             </div>
                             <button
                                 class="text-white border border-custome-orange p-3 rounded-lg text-xs block mx-auto mt-4 md:flex md:mx-0 md:mt-0"
+                                v-if="btn_sponsor && btn_sponsor.link"
+                                @click="openLink(btn_sponsor.link)"
                             >
-                                Apply to become a sponsor
+                                {{ btn_sponsor.value }}
                             </button>
                         </div>
                         <div>
@@ -388,6 +390,14 @@ export default {
         silver_sponsors: Array,
         bronze_sponsors: Array,
         community_sponsors: Array,
+        btn_sponsor: Object,
+    },
+    setup() {
+        function openLink(link) {
+            window.location.href = link;
+        }
+
+        return { openLink };
     },
 };
 </script>

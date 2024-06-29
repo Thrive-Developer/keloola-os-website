@@ -17,61 +17,81 @@ class ConfigSeeder extends Seeder
                 'key' => "BUTTON_DOWNLOAD",
                 'value' => 'Download',
                 'type' => 'BUTTON',
-                'link' => ''
+                'link' => '',
+                'page' => '/',
+                'section' => 'Hero'
             ],
             [
                 'key' => "BUTTON_INSTALLATION_INSTRUCTIONS",
                 'value' => 'Installation Instructions',
                 'type' => 'BUTTON',
-                'link' => ''
+                'link' => '',
+                'page' => '/',
+                'section' => 'Home'
             ],
             [
                 'key' => "BUTTON_INSTALLATION_GUIDE",
                 'value' => 'Installation Guide',
                 'type' => 'BUTTON',
-                'link' => ''
+                'link' => '',
+                'page' => '/',
+                'section' => 'Navbar'
             ],
             [
                 'key' => "BUTTON_CHAT_ROOM",
                 'value' => 'Chat',
                 'type' => 'BUTTON',
-                'link' => 'https://discord.com/invite/MJeZsPacuY'
+                'link' => 'https://discord.com/invite/MJeZsPacuY',
+                'page' => '/contact',
+                'section' => 'Support Queries'
             ],
             [
                 'key' => "BUTTON_GET_INVOLVED",
                 'value' => 'Go',
                 'type' => 'BUTTON',
-                'link' => 'https://ticket.thrive.co.id/'
+                'link' => '/get-involved',
+                'page' => '/contact',
+                'section' => 'Feedback'
             ],
             [
                 'key' => "BUTTON_DONATION_USD",
                 'value' => 'Make a donation in USD',
                 'type' => 'BUTTON',
-                'link' => ''
+                'link' => '',
+                'page' => '/donors',
+                'section' => 'Bank Transfer'
             ],
             [
                 'key' => "BUTTON_DONATION_IDR",
                 'value' => 'Make a donation in IDR',
                 'type' => 'BUTTON',
-                'link' => ''
+                'link' => '',
+                'page' => '/donors',
+                'section' => 'Bank Transfer'
             ],
             [
                 'key' => "BUTTON_DONATION_OTHER",
                 'value' => 'Other',
                 'type' => 'BUTTON',
-                'link' => ''
+                'link' => '',
+                'page' => '/donors',
+                'section' => 'Other'
             ],
             [
                 'key' => "IMAGE_BITCOIN_DONATION",
                 'value' => '',
                 'type' => 'IMAGE',
-                'link' => ''
+                'link' => '',
+                'page' => '/donors',
+                'section' => 'Crypto-currencies'
             ],
             [
                 'key' => "IMAGE_HERO_DONATION",
                 'value' => '/assets/donations.svg',
                 'type' => 'IMAGE',
-                'link' => ''
+                'link' => '',
+                'page' => '/donors',
+                'section' => 'Hero'
             ],
             [
                 'key' => "TEXT_HERO_DONATION",
@@ -91,7 +111,73 @@ class ConfigSeeder extends Seeder
                     </p>
                 ',
                 'type' => 'TEXT',
-                'link' => ''
+                'link' => '',
+                'page' => '/donors',
+                'section' => 'Hero'
+            ],
+            [
+                'key' => "BUTTON_BECOME_SPONSOR",
+                'value' => 'Apply to become a sponsor',
+                'type' => 'BUTTON',
+                'link' => '',
+                'page' => '/sponsors',
+                'section' => 'Many thanks to all our sponsors'
+            ],
+            [
+                'key' => "BUTTON_DONATION",
+                'value' => 'Donate',
+                'type' => 'BUTTON',
+                'link' => '',
+                'page' => '/get-involved',
+                'section' => 'Financial help'
+            ],
+            [
+                'key' => "BUTTON_SPONSORSHIP",
+                'value' => 'Sponsor',
+                'type' => 'BUTTON',
+                'link' => '',
+                'page' => '/get-involved',
+                'section' => 'Financial help'
+            ],
+            [
+                'key' => "BUTTON_JOIN_COMMUNITY",
+                'value' => 'Join the forums',
+                'type' => 'BUTTON',
+                'link' => '',
+                'page' => '/get-involved',
+                'section' => 'Support and promotion'
+            ],
+            [
+                'key' => "BUTTON_HELP_OTHER",
+                'value' => 'Chat room',
+                'type' => 'BUTTON',
+                'link' => '',
+                'page' => '/get-involved',
+                'section' => 'Support and promotion'
+            ],
+            [
+                'key' => "BUTTON_REPORT_BUGS",
+                'value' => 'Report',
+                'type' => 'BUTTON',
+                'link' => '',
+                'page' => '/get-involved',
+                'section' => 'Project contributions'
+            ],
+            [
+                'key' => "BUTTON_TRANSLATE",
+                'value' => 'Translate',
+                'type' => 'BUTTON',
+                'link' => '',
+                'page' => '/get-involved',
+                'section' => 'Project contributions'
+            ],
+            [
+                'key' => "BUTTON_DEVELOP",
+                'value' => 'Develop',
+                'type' => 'BUTTON',
+                'link' => '',
+                'page' => '/get-involved',
+                'section' => 'Project contributions'
             ],
         ];
 

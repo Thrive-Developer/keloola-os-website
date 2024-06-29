@@ -62,8 +62,9 @@
                         </div>
                     </div>
                     <p class="text-sm text-left mt-16">
-                        * If you are new to IRC (the technology used by the
-                        chatroom), please read this tutorial.
+                        * If you are new to Discord (the technology used by the
+                        chatroom), you can use it directly in your browser or
+                        download the app from here.
                     </p>
                 </div>
 

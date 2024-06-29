@@ -327,9 +327,14 @@
                                         class="hidden bg-gray-700 text-base z-10 list-none divide-y divide-gray-900 rounded shadow my-4 w-[480px]"
                                     >
                                         <div
-                                            class="px-4 py-2 text-white grid grid-cols-2"
+                                            class="px-4 py-2 text-white grid grid-cols-1"
                                         >
-                                            <div>
+                                            <p
+                                                class="text-sm text-custome-orange font-medium"
+                                            >
+                                                About
+                                            </p>
+                                            <div class="mt-2">
                                                 <a
                                                     href="/team"
                                                     class="text-xs hover:text-custome-orange text-white block"
@@ -339,11 +344,51 @@
                                             <div>
                                                 <a
                                                     href="/contact"
-                                                    class="text-xs hover:text-custome-orange text-white block"
+                                                    class="text-xs hover:text-custome-orange text-white block mt-4"
                                                     >Contact Us</a
                                                 >
                                             </div>
+                                            <div
+                                                v-for="(page, index) in $page
+                                                    .props.button_custom_pages"
+                                                :key="index"
+                                            >
+                                                <a
+                                                    :href="`/page/${page.slug}`"
+                                                    class="text-xs hover:text-custome-orange text-white block mt-4"
+                                                    >{{ page.title }}</a
+                                                >
+                                            </div>
                                         </div>
+                                        <!-- <div
+                                            class="bg-cover bg-no-repeat bg-left-top h-18 w-full pt-6 bg-black z-0 text-white px-4"
+                                            style="
+                                                background-image: url(/assets/wave.svg);
+                                            "
+                                            v-if="
+                                                $page.props.button_custom_pages
+                                            "
+                                        >
+                                            <div
+                                                class="px-4 py-2 text-white grid grid-cols-2 text-center"
+                                            >
+                                                <a
+                                                    v-for="(
+                                                        page, index
+                                                    ) in $page.props
+                                                        .button_custom_pages"
+                                                    :key="index"
+                                                    :class="`text-white border border-custome-orange p-3 rounded-lg text-xs mb-2 ${
+                                                        index % 2 == 0
+                                                            ? 'mr-2'
+                                                            : ''
+                                                    }`"
+                                                    :href="`/page/${page.slug}`"
+                                                >
+                                                    {{ page.title }}
+                                                </a>
+                                            </div>
+                                        </div> -->
                                     </div>
                                 </li>
                                 <li>

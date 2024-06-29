@@ -50,7 +50,11 @@ export default {
     setup(props) {
         const route = ref("admin/config");
 
-        const fields = [{ key: "key", label: "Key" }];
+        const fields = [
+            { key: "key", label: "Key" },
+            { key: "page", label: "Page", type: "link", link: "page" },
+            { key: "section", label: "Section" },
+        ];
 
         return {
             fields,

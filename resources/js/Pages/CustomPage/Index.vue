@@ -1,10 +1,10 @@
 <template>
-    <Head title="Editions" />
+    <Head title="Custom Page" />
     <div class="page-header d-print-none">
         <div class="container-xl">
             <div class="row g-2 align-items-center">
                 <div class="col">
-                    <h2 class="page-title">Editions</h2>
+                    <h2 class="page-title">Custom Page</h2>
                 </div>
                 <div class="col-auto ms-auto d-print-none">
                     <div class="btn-list">
@@ -32,7 +32,7 @@ import Table from "../../Components/Table.vue";
 import ButtonCreate from "../../Components/Button/ButtonCreate.vue";
 
 export default {
-    name: "editionsIndex",
+    name: "custompageIndex",
     components: {
         Head,
         Link,
@@ -43,11 +43,9 @@ export default {
         models: Object,
     },
     setup(props) {
-        const route = ref("editions");
+        const route = ref("admin/custom-page");
 
-        const fields = [
-            { key: 'nama', label: 'Nama'},
-        ];
+        const fields = [{ key: "title", label: "Title" }];
 
         return {
             fields,

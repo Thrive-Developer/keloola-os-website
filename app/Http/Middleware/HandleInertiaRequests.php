@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Models\Config;
+use App\Models\CustomPage;
 use App\Models\OsVersion;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
@@ -41,6 +42,8 @@ class HandleInertiaRequests extends Middleware
         $latest_version = OsVersion::orderBy('version', 'desc')->first();
         $before_latest_version = OsVersion::orderBy('version', 'desc')->skip(1)->first();
 
+        $button_custom_pages = CustomPage::all();
+
         return array_merge(parent::share($request), [
             'flash' => [
                 'success' => fn () => $request->session()->get('success'),
@@ -50,7 +53,8 @@ class HandleInertiaRequests extends Middleware
             'csrf_token' => csrf_token(),
             'btn_install_guide' => $btn_install_guide,
             'latest_version' => $latest_version,
-            'before_latest_version' => $before_latest_version
+            'before_latest_version' => $before_latest_version,
+            'button_custom_pages' => $button_custom_pages,
             // 'authorization' => [
             //     'roles' => !is_null(auth()->user()) ? auth()->user()->getRoleNames() : null,
             //     'permissions' => !is_null(auth()->user()) ? auth()->user()->getPermissionNames() : null
