@@ -18,7 +18,7 @@ class AuthController extends Controller
     {
         if (Auth::check()) { // true sekalian session field di users nanti bisa dipanggil via Auth
             //Login Success
-            return Redirect::route('dashboard.index');
+            return Redirect::route('dashboard');
         }
 
         return Inertia::render('Auth/Login');
