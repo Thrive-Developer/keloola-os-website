@@ -131,7 +131,9 @@
             id="back-top"
             class="fixed bottom-6 right-6 bg-custome-orange p-4 rounded-lg transition ease-in-out duration-500 opacity-0"
         >
-            <img src="assets/Path 33.svg" alt="img" />
+            <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.945923 8.00098L7.24585 1.70117L13.5459 8.00098" stroke="white" stroke-width="1.65" stroke-miterlimit="10"/>
+            </svg>
         </button>
     </div>
 </template>

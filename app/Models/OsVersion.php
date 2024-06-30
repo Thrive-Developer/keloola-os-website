@@ -18,7 +18,7 @@ class OsVersion extends Model
      *
      * @var string[]
      */
-    protected $fillable = ['version', 'code_name', 'slug', 'package_base', 'status', 'description'];
+    protected $fillable = ['version', 'code_name', 'slug', 'package_base', 'status', 'description', 'slogan', 'image'];
 
     public function saveModel($data)
     {
