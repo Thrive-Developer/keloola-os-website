@@ -32,7 +32,6 @@ class OsVersionController extends Controller
         if ($model->where('slug', $data['slug'])->exists()) {
             $data['slug'] = $data['slug'] . '-' . time();
         }
-        // $data['slogan'] = null;
         if ($model->saveModel($data)) {
             return Redirect::route('os-version.index')->with('success', 'Data berhasil disimpan');
         } else {
