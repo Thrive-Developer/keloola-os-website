@@ -46,7 +46,7 @@
                         v-for="(edition, index) in editions"
                         :key="index"
                     >
-                        <div class="w-full md:w-1/2" v-if="index % 2 == 0">
+                        <div :class="`${index % 2 == 0 ? 'w-full md:w-1/2' : 'block md:hidden'} `">
                             <img
                                 :src="edition.image"
                                 class="w-12/12 lg:w-8/12 mx-auto lg:mx-0"
@@ -85,7 +85,7 @@
                                 >
                             </div>
                         </div>
-                        <div class="w-full md:w-1/2" v-if="index % 2 != 0">
+                        <div :class="`${index % 2 != 0 ? 'w-full md:w-1/2 hidden md:block' : 'hidden'} `">
                             <img
                                 :src="edition.image"
                                 class="w-12/12 lg:w-8/12 mx-auto lg:mx-0"
@@ -93,63 +93,6 @@
                             />
                         </div>
                     </div>
-                    <!-- <div class="mt-12 md:flex items-center gap-12">
-                        <div class="w-full mt-6 md:mt-0 md:w-1/2">
-                            <p class="italic text-sm">Stable, robust, traditional</p>
-                            <p class="text-2xl my-2 font-bold">MATE Edition</p>
-                            <p class="text-sm mb-2 leading-loose">Linux Mint is also involved in the development of MATE, a classic desktop <br class="hidden lg:flex">
-                                environment which is the continuation of GNOME 2, Linux Mint’s default <br class="hidden lg:flex">
-                                desktop between 2006 and 2011. Although it misses a few features and <br class="hidden lg:flex">
-                                its development is slower than Cinnamon’s, MATE runs faster, <br class="hidden lg:flex">
-                                uses fewer resources and is more stable than Cinnamon.
-                            </p>
-                            <div class="mt-6 flex justify-start items-center gap-4">
-                                <button class="text-white bg-custome-orange p-3 rounded-lg mr-4 text-xs">Download</button>
-                                <a href="" class="text-custome-orange text-sm">New Features</a>
-                                <a href="" class="text-custome-orange text-sm">Release Notes</a>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-1/2">
-                            <img src="assets/monitor.png" class="w-12/12 lg:w-8/12 mx-auto lg:mx-0" alt="image">
-                        </div>
-                    </div>
-                    <div class="mt-12 md:flex items-center gap-12">
-                        <div class="w-full md:w-1/2">
-                            <img src="assets/monitor.png" class="w-12/12 lg:w-8/12 mx-auto lg:mx-0" alt="image">
-                        </div>
-                        <div class="w-full mt-6 md:mt-0 md:w-1/2">
-                            <p class="italic text-sm">Light, simple, efficient</p>
-                            <p class="text-2xl my-2 font-bold">Xface Edition</p>
-                            <p class="text-sm mb-2 leading-loose">Xfce is a lightweight desktop environment. It doesn’t support as many <br class="hidden lg:flex">
-                                features as Cinnamon or MATE, but it’s extremely stable and very light <br class="hidden lg:flex">
-                                on resource usage.
-                            </p>
-                            <div class="mt-6 flex justify-start items-center gap-4">
-                                <button class="text-white bg-custome-orange p-3 rounded-lg mr-4 text-xs">Download</button>
-                                <a href="" class="text-custome-orange text-sm">New Features</a>
-                                <a href="" class="text-custome-orange text-sm">Release Notes</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-12 md:flex items-center gap-12">
-                        <div class="w-full mt-6 md:mt-0 md:w-1/2">
-                            <p class="italic text-sm">Support for the most modern hardware</p>
-                            <p class="text-2xl my-2 font-bold">Cinnamon “EDGE” Edition</p>
-                            <p class="text-sm mb-2 leading-loose">An "EDGE" ISO image is also available for the Cinnamon edition. <br class="hidden lg:flex">
-                                This image ships with a newer kernel to be able to support the latest <br class="hidden lg:flex">
-                                hardware chipsets. If you cannot boot the regular editions, <br class="hidden lg:flex">
-                                we recommend you try the "EDGE" ISO instead.
-                            </p>
-                            <div class="mt-6 flex justify-start items-center gap-4">
-                                <button class="text-white bg-custome-orange p-3 rounded-lg mr-4 text-xs">Download</button>
-                                <a href="" class="text-custome-orange text-sm">New Features</a>
-                                <a href="" class="text-custome-orange text-sm">Release Notes</a>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-1/2">
-                            <img src="assets/monitor.png" class="w-12/12 lg:w-8/12 mx-auto lg:mx-0" alt="image">
-                        </div>
-                    </div> -->
                 </div>
 
                 <div

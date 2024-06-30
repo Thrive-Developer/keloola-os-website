@@ -333,14 +333,14 @@
             <p class="text-sm italic z-10 text-white text-center mb-8">
                 From the press
             </p>
-            <div class="px-32">
+            <div class="px-4 lg:px-32">
                 <swiper 
                     :cssMode="true"
                     :navigation="true"
                     :pagination="true"
                     :mousewheel="true"
                     :keyboard="true" :slides-per-view="1" :space-between="50" :modules="modules" @swiper="onSwiper" @slideChange="onSlideChange">
-                    <swiper-slide v-for="(row, index) in testimonial" :key="index" class="px-32 text-center text-xl leading-loose">
+                    <swiper-slide v-for="(row, index) in testimonial" :key="index" class="px-8 lg:px-32 text-center text-xl leading-loose">
                         <p >{{row.description}}</p>
                         <div class="flex justify-center">
                             <img
