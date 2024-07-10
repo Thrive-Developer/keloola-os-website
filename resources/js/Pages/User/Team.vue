@@ -8,7 +8,7 @@
             
             <div class="bg-custome-gray mt-3">
                 <div class="container mx-auto px-4 sm:px-16 py-14">
-                    <p class="text-sm">Many people contribute to the Linux Mint project. Here are the main teams and their leaders.</p>
+                    <p class="text-sm">Many people contribute to the Keloola OS project. Here are the main teams and their leaders.</p>
                     <h1 class="text-custome-orange text-4xl font-semibold mt-8">Team Leaders</h1>
                     <div class="overflow-auto mt-3.5" style="scrollbar-width: thin; scrollbar-color: #777777 #E4E5E7;">
                         <table class="min-w-full mt-3 text-sm font-light text-surface">

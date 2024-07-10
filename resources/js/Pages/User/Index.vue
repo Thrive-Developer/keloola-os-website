@@ -310,7 +310,7 @@
                         Will it suit my needs?
                     </p>
                     <p class="text-white text-sm leading-loose">
-                        Hopefully. Linux Mint comes with what<br />
+                        Hopefully. Keloola OS comes with what<br />
                         most people need out of the box as<br />
                         well as easy access to more than<br />
                         60,000 software packages and<br />
