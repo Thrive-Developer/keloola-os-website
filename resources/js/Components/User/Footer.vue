@@ -37,18 +37,9 @@
                             </div>
                             <div>
                                 <p class="text-white leading-loose">
-                                    Almost all the packages we distribute are
+                                    This initiative is part of a broader effort to drive technological advancement in Indonesia, 
                                     <br class="hidden lg:flex" />
-                                    open-source. You can find their source
-                                    <br class="hidden lg:flex" />
-                                    code on http://packages.keloolaos.com
-                                    <br class="hidden lg:flex" />
-                                    or https://github.com/keloolaos.
-                                    <br class="hidden lg:flex" />
-                                    If you can't find what you're looking for<br
-                                        class="hidden lg:flex"
-                                    />
-                                    contact us.
+                                    focusing on delivering stable and efficient operating systems tailored for the needs of business users.
                                 </p>
                             </div>
                         </div>
@@ -58,17 +49,17 @@
                                     Quick Links
                                 </p>
                                 <a
-                                    href="https://www.keloola.com/coming-soon/"
+                                    href="/download"
                                     class="text-white block mt-2"
                                     >Download</a
                                 >
                                 <a
-                                    href="https://www.keloola.com/coming-soon/"
+                                    href="/donors"
                                     class="text-white block mt-2"
                                     >Donate</a
                                 >
                                 <a
-                                    href="https://www.keloola.com/coming-soon/"
+                                    href="/get-involved"
                                     class="text-white block mt-2"
                                     >Get Involved</a
                                 >
@@ -76,19 +67,19 @@
                             <div>
                                 <p class="text-white font-semibold">Info</p>
                                 <a
-                                    href="https://www.keloola.com/coming-soon/"
+                                    href="/team"
                                     class="text-white block mt-2"
-                                    >About</a
+                                    >Team</a
                                 >
                                 <a
-                                    href="https://www.keloola.com/coming-soon/"
+                                    href="/contact"
+                                    class="text-white block mt-2"
+                                    >Contact Us</a
+                                >
+                                <a
+                                    href="faq"
                                     class="text-white block mt-2"
                                     >FAQ</a
-                                >
-                                <a
-                                    href="https://www.keloola.com/coming-soon/"
-                                    class="text-white block mt-2"
-                                    >Privacy & Cookies</a
                                 >
                             </div>
                             <div>
@@ -113,13 +104,10 @@
                     </div>
                     <div class="z-10 absolute bottom-6 leading-loose">
                         <p class="text-white">
-                            Keloola OS is copyrighted since 2023 and trademarked
-                            through the Keloola OS Mark Institute. All rights
-                            reserved.
+                            ©Keloola OS is a registered trademark of Bright Technology Holding Ltd., 20-22 Wenlock Road, London, United Kingdom.
                         </p>
                         <p class="text-white">
-                            Keloola OS® is the registered trademark of Linus
-                            Torvalds in the U.S. and other countries.
+                            Research and development conducted in Indonesia. All rights reserved.
                         </p>
                     </div>
                 </div>

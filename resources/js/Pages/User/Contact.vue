@@ -15,7 +15,7 @@
                     </h1>
                     <p class="text-sm mt-4">
                         Seek help, support and assistance with using or
-                        installing Linux Mint...
+                        installing Keloola OS...
                     </p>
                     <div
                         class="border border-black pt-10 pb-14 px-20 mt-8 grid grid-cols-1 lg:grid-cols-1 gap-6"
@@ -24,7 +24,7 @@
                             <img src="assets/documentation.svg" alt="documentation" class="mx-auto">
                             <p class="text-center text-custome-orange font-bold mt-4 mb-1">Documentation</p>
                             <p class="text-center text-sm leading-loose mb-5">We're providing documentation to make <br>
-                                using Linux Mint as easy as possible.
+                                using Keloola OS as easy as possible.
                             </p>
                             <a href="https://www.keloola.com/coming-soon/" target="_blank" class="text-white bg-custome-orange py-2.5 px-5 rounded-lg mx-auto mt-4 font-semibold">Read</a>
                         </div>
@@ -91,7 +91,7 @@
                             Get Involved
                         </h1>
                         <p class="text-sm mt-4 mb-5">
-                            Contribute to the Linux Mint project with ideas,
+                            Contribute to the Keloola OS project with ideas,
                             translations, bug reports...
                         </p>
                         <a

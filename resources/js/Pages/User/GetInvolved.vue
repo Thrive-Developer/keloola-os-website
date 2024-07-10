@@ -108,7 +108,7 @@
                                         />
                                         and artists get to the point where they
                                         are able<br class="hidden xl:flex" />
-                                        to work full-time on Mint-related
+                                        to work full-time on Keloola-Related
                                         projects.
                                     </p>
                                     <button
@@ -155,7 +155,7 @@
                                         of people who enjoy, gather, and
                                         interact with a free and open
                                         project.<br class="hidden xl:flex" />
-                                        Make Mint better by welcoming people,
+                                        Make Keloola better by welcoming people,
                                         participating in<br
                                             class="hidden xl:flex"
                                         />
@@ -199,7 +199,7 @@
                                             class="hidden xl:flex"
                                         />
                                         consider reading the forums and/or
-                                        joining the IRC channel
+                                        joining the Discord channel
                                         <br class="hidden xl:flex" />
                                         and helping other Keloola OS users solve
                                         the problems<br
