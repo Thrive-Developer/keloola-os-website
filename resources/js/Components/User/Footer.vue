@@ -50,17 +50,17 @@
                                 </p>
                                 <a
                                     href="/download"
-                                    class="text-white block mt-2"
+                                    class="text-white block mt-2 hover:text-custome-orange"
                                     >Download</a
                                 >
                                 <a
                                     href="/donors"
-                                    class="text-white block mt-2"
+                                    class="text-white block mt-2 hover:text-custome-orange"
                                     >Donate</a
                                 >
                                 <a
                                     href="/get-involved"
-                                    class="text-white block mt-2"
+                                    class="text-white block mt-2 hover:text-custome-orange"
                                     >Get Involved</a
                                 >
                             </div>
@@ -68,17 +68,17 @@
                                 <p class="text-white font-semibold">Info</p>
                                 <a
                                     href="/team"
-                                    class="text-white block mt-2"
+                                    class="text-white block mt-2 hover:text-custome-orange"
                                     >Team</a
                                 >
                                 <a
                                     href="/contact"
-                                    class="text-white block mt-2"
+                                    class="text-white block mt-2 hover:text-custome-orange"
                                     >Contact Us</a
                                 >
                                 <a
                                     href="faq"
-                                    class="text-white block mt-2"
+                                    class="text-white block mt-2 hover:text-custome-orange"
                                     >FAQ</a
                                 >
                             </div>
@@ -86,17 +86,17 @@
                                 <p class="text-white font-semibold">Support</p>
                                 <a
                                     href="https://www.keloola.com/coming-soon/"
-                                    class="text-white block mt-2"
+                                    class="text-white block mt-2 hover:text-custome-orange"
                                     >Installation Guide</a
                                 >
                                 <a
                                     href="https://www.keloola.com/coming-soon/"
-                                    class="text-white block mt-2"
+                                    class="text-white block mt-2 hover:text-custome-orange"
                                     >User Guide</a
                                 >
                                 <a
                                     href="https://www.keloola.com/coming-soon/"
-                                    class="text-white block mt-2"
+                                    class="text-white block mt-2 hover:text-custome-orange"
                                     >Forums</a
                                 >
                             </div>

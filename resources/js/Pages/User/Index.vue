@@ -175,24 +175,24 @@
                 right at home.
             </p>
             <div class="mt-11 grid md:grid-cols-2 lg:grid-cols-3 gap-14">
-                <div class="flex justify-center items-start">
-                    <img src="assets/Path 21.svg" class="mr-5" alt="image" />
-                    <div>
+                <div>
+                    <div class="flex justify-center items-center mb-2">
+                        <img src="assets/Path 21.svg" class="mr-2" alt="image" />
                         <p class="text-custome-orange font-bold">OOTB</p>
-                        <p class="text-white text-sm leading-loose">
-                            Everything just works "Out Of The Box", without the
-                            need to configure anything or to install extra
-                            applications. It's ready to go. Although it's very
-                            configurable, everything is set and tuned nicely by
-                            default and no unnecessary questions are asked.
-                        </p>
                     </div>
+                    <p class="text-white text-sm leading-loose text-center">
+                        Everything just works "Out Of The Box", without the
+                        need to configure anything or to install extra
+                        applications. It's ready to go. Although it's very
+                        configurable, everything is set and tuned nicely by
+                        default and no unnecessary questions are asked.
+                    </p>
                 </div>
-                <div class="flex justify-center items-start">
+                <!-- <div class="flex justify-center items-start">
                     <img src="assets/Path 21.svg" class="mr-5" alt="image" />
                     <div>
                         <p class="text-custome-orange font-bold">Rock Solid</p>
-                        <p class="text-white text-sm leading-loose">
+                        <p class="text-white text-sm leading-loose text-center">
                             With centralized software updates, system snapshots,
                             a unique Update Manager and the robustness of its
                             Linux architecture, Keloola OS requires very little
@@ -200,59 +200,72 @@
                             break.
                         </p>
                     </div>
-                </div>
-                <div class="flex justify-center items-start">
-                    <img src="assets/Path 21.svg" class="mr-5" alt="image" />
-                    <div>
-                        <p class="text-custome-orange font-bold">KISS</p>
-                        <p class="text-white text-sm leading-loose">
-                            It's very easy to use. It features an intuitive
-                            desktop and adopts KISS principles. Anyone can
-                            rapidly feel at home and use Keloola OS. User
-                            experience, workflow and comfort is key.
-                        </p>
+                </div> -->
+                <div>
+                    <div class="flex justify-center items-center mb-2">
+                        <img src="assets/Path 21.svg" class="mr-2" alt="image" />
+                        <p class="text-custome-orange font-bold">Rock Solid</p>
                     </div>
+                    <p class="text-white text-sm leading-loose text-center">
+                        With centralized software updates, system snapshots,
+                        a unique Update Manager and the robustness of its
+                        Linux architecture, Keloola OS requires very little
+                        maintenance. It works, it's safe and it doesn't
+                        break.
+                    </p>
                 </div>
-                <div class="flex justify-center items-start">
-                    <img src="assets/Path 21.svg" class="mr-5" alt="image" />
-                    <div>
+                <div>
+                    <div class="flex justify-center items-center mb-2">
+                        <img src="assets/Path 21.svg" class="mr-2" alt="image" />
+                        <p class="text-custome-orange font-bold">KISS</p>
+                    </div>
+                    <p class="text-white text-sm leading-loose text-center">
+                        It's very easy to use. It features an intuitive
+                        desktop and adopts KISS principles. Anyone can
+                        rapidly feel at home and use Keloola OS. User
+                        experience, workflow and comfort is key.
+                    </p>
+                </div>
+                <div>
+                    <div class="flex justify-center items-center mb-2">
+                        <img src="assets/Path 21.svg" class="mr-2" alt="image" />
                         <p class="text-custome-orange font-bold">
                             Free with Premium Support
                         </p>
-                        <p class="text-white text-sm leading-loose">
-                            Explore Keloola OS: a free, open-source enterprise
-                            operating system with optional Premium Livepatch for
-                            enhanced support. Perfect for business stability and
-                            continuity.
-                        </p>
                     </div>
+                    <p class="text-white text-sm leading-loose text-center">
+                        Explore Keloola OS: a free, open-source enterprise
+                        operating system with optional Premium Livepatch for
+                        enhanced support. Perfect for business stability and
+                        continuity.
+                    </p>
                 </div>
-                <div class="flex justify-center items-start">
-                    <img src="assets/Path 21.svg" class="mr-5" alt="image" />
-                    <div>
+                <div>
+                    <div class="flex justify-center items-center mb-2">
+                        <img src="assets/Path 21.svg" class="mr-2" alt="image" />
                         <p class="text-custome-orange font-bold">Home rule</p>
-                        <p class="text-white text-sm leading-loose">
-                            It's your computer, your rules. This is a key
-                            principle at Keloola OS. We don't collect data, we
-                            don't work against you. You're the boss. Your
-                            operating system is designed to do what you want
-                            without getting in your way.
-                        </p>
                     </div>
+                    <p class="text-white text-sm leading-loose text-center">
+                        It's your computer, your rules. This is a key
+                        principle at Keloola OS. We don't collect data, we
+                        don't work against you. You're the boss. Your
+                        operating system is designed to do what you want
+                        without getting in your way.
+                    </p>
                 </div>
-                <div class="flex justify-center items-start">
-                    <img src="assets/Path 21.svg" class="mr-5" alt="image" />
-                    <div>
+                <div>
+                    <div class="flex justify-center items-center mb-2">
+                        <img src="assets/Path 21.svg" class="mr-2" alt="image" />
                         <p class="text-custome-orange font-bold">
                             Community-centric
                         </p>
-                        <p class="text-white text-sm leading-loose">
-                            There is a tight bond and a great relationship
-                            between the development team and the community. We
-                            communicate with our users and constantly use their
-                            feedback to improve Keloola OS.
-                        </p>
                     </div>
+                    <p class="text-white text-sm leading-loose text-center">
+                        There is a tight bond and a great relationship
+                        between the development team and the community. We
+                        communicate with our users and constantly use their
+                        feedback to improve Keloola OS.
+                    </p>
                 </div>
             </div>
         </div>
