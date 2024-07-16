@@ -18,20 +18,20 @@
                                 <th scope="col" class="px-4 py-2 border border-black">TEAM</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-sm">
-                                <tr>
+                            <tbody class="text-sm bg-white text-black">
+                                <tr class="hover:bg-[#FFC9B0]">
                                     <td class="px-6 py-4 border border-black text-left"><div class="flex items-center"><div class="w-6 h-4 bg-custome-orange mr-4"></div></div></td>
                                     <td class="px-4 py-2 border border-black">Clement Lefebvre</td>
                                     <td class="px-4 py-2 border border-black">“Clem”</td>
                                     <td class="px-4 py-2 border border-black">Overall project and development team</td>
                                 </tr>
-                                <tr>
+                                <tr class="hover:bg-[#FFC9B0]">
                                     <td class="px-6 py-4 border border-black text-left"><div class="flex items-center"><div class="w-6 h-4 bg-custome-orange mr-4"></div></div></td>
                                     <td class="px-4 py-2 border border-black">Vincent Vermeulen</td>
                                     <td class="px-4 py-2 border border-black">“Xenopeel”</td>
                                     <td class="px-4 py-2 border border-black">Administration and moderation teams</td>
                                 </tr>
-                                <tr>
+                                <tr class="hover:bg-[#FFC9B0]">
                                     <td class="px-6 py-4 border border-black text-left"><div class="flex items-center"><div class="w-6 h-4 bg-custome-orange mr-4"></div></div></td>
                                     <td class="px-4 py-2 border border-black">Oscar799</td>
                                     <td class="px-4 py-2 border border-black">“Oscar799”</td>
@@ -51,7 +51,7 @@
                                     <th scope="col" class="px-4 py-2 border border-black">LINK</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-sm">
+                            <!-- <tbody class="text-sm">
                                 <tr>
                                     <td class="px-4 py-2 border border-black">Develop Team</td>
                                     <td class="px-4 py-2 border border-black">Software development and bug fixing</td>
@@ -78,6 +78,38 @@
                                     <td class="px-4 py-2 border border-black">Launchpad</td>
                                 </tr>
                                 <tr>
+                                    <td class="px-4 py-2 border border-black">QA Team</td>
+                                    <td class="px-4 py-2 border border-black">Quality testing</td>
+                                    <td class="px-4 py-2 border border-black">Community Website</td>
+                                </tr>
+                            </tbody> -->
+                            <tbody class="text-sm bg-white text-black">
+                                <tr class="hover:bg-[#FFC9B0]"> 
+                                    <td class="px-4 py-2 border border-black">Develop Team</td>
+                                    <td class="px-4 py-2 border border-black">Software development and bug fixing</td>
+                                    <td class="px-4 py-2 border border-black">Github</td>
+                                </tr>
+                                <tr class="hover:bg-[#FFC9B0]"> 
+                                    <td class="px-4 py-2 border border-black">Administration and Moderation Teams</td>
+                                    <td class="px-4 py-2 border border-black">Administration and moderation (forums, community website and IRC)</td>
+                                    <td class="px-4 py-2 border border-black">Community Website</td>
+                                </tr>
+                                <tr class="hover:bg-[#FFC9B0]"> 
+                                    <td class="px-4 py-2 border border-black"></td>
+                                    <td class="px-4 py-2 border border-black"></td>
+                                    <td class="px-4 py-2 border border-black">Forums</td>
+                                </tr>
+                                <tr class="hover:bg-[#FFC9B0]"> 
+                                    <td class="px-4 py-2 border border-black">Design Team</td>
+                                    <td class="px-4 py-2 border border-black">Web and user interface design</td>
+                                    <td class="px-4 py-2 border border-black"></td>
+                                </tr>
+                                <tr class="hover:bg-[#FFC9B0]"> 
+                                    <td class="px-4 py-2 border border-black">Translation Teams</td>
+                                    <td class="px-4 py-2 border border-black">Software translations</td>
+                                    <td class="px-4 py-2 border border-black">Launchpad</td>
+                                </tr>
+                                <tr class="hover:bg-[#FFC9B0]"> 
                                     <td class="px-4 py-2 border border-black">QA Team</td>
                                     <td class="px-4 py-2 border border-black">Quality testing</td>
                                     <td class="px-4 py-2 border border-black">Community Website</td>

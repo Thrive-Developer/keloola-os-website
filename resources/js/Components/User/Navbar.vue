@@ -65,7 +65,7 @@
                                 <li>
                                     <a
                                         href="/"
-                                        :class="`text-white hover:bg-gray-700 border-b border-gray-900 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-white md:p-0 md:py-2 ${
+                                        :class="`text-white hover:text-custome-orange border-b border-gray-900 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 hover:text-custome-orange md:p-0 md:py-2 ${
                                             activePage == 'home'
                                                 ? 'md:border-b-2 md:border-custome-orange'
                                                 : ''
@@ -77,7 +77,7 @@
                                     <button
                                         id="dropdownNavbarLink"
                                         data-dropdown-toggle="dropdownNavbar"
-                                        :class="`text-white hover:bg-gray-700 md:hover:bg-transparent pl-3 pr-4 py-2 md:hover:text-white md:p-0 md:py-2 font-medium flex items-center justify-between w-full md:w-auto ${
+                                        :class="`text-white hover:text-custome-orange md:hover:bg-transparent pl-3 pr-4 py-2 hover:text-custome-orange md:p-0 md:py-2 font-medium flex items-center justify-between w-full md:w-auto ${
                                             activePage == 'download'
                                                 ? 'md:border-b-2 md:border-custome-orange'
                                                 : ''
@@ -100,10 +100,10 @@
                                     <!-- Dropdown menu -->
                                     <div
                                         id="dropdownNavbar"
-                                        class="hidden bg-gray-700 text-base z-10 list-none divide-y divide-gray-900 rounded shadow my-4 w-[480px]"
+                                        class="hidden bg-gray-700 text-base z-10 list-none divide-y divide-gray-900 rounded shadow my-4 w-auto"
                                     >
                                         <div
-                                            class="px-4 py-4 text-white grid grid-cols-1 md:grid-cols-2"
+                                            class="px-4 py-4 text-white grid grid-cols-1 md:grid-cols-2 md:gap-6"
                                         >
                                             <div>
                                                 <p
@@ -134,7 +134,7 @@
                                                     >
                                                     <span
                                                         class="bg-custome-orange rounded-md ml-1 text-xs px-2"
-                                                        >Recommend</span
+                                                        >Recommended</span
                                                     >
                                                 </div>
                                             </div>
@@ -217,7 +217,7 @@
                                     <button
                                         id="dropdownNavbarLinkProject"
                                         data-dropdown-toggle="dropdownNavbarProject"
-                                        :class="`text-white hover:bg-gray-700 md:hover:bg-transparent pl-3 pr-4 py-2 md:hover:text-white md:p-0 md:py-2 font-medium flex items-center justify-between w-full md:w-auto ${
+                                        :class="`text-white hover:text-custome-orange md:hover:bg-transparent pl-3 pr-4 py-2 hover:text-custome-orange md:p-0 md:py-2 font-medium flex items-center justify-between w-full md:w-auto ${
                                             activePage == 'project'
                                                 ? 'md:border-b-2 md:border-custome-orange'
                                                 : ''
@@ -240,7 +240,7 @@
                                     <!-- Dropdown menu -->
                                     <div
                                         id="dropdownNavbarProject"
-                                        class="hidden bg-gray-700 text-base z-10 list-none divide-y divide-gray-900 rounded shadow my-4 w-[480px]"
+                                        class="hidden bg-gray-700 text-base z-10 list-none divide-y divide-gray-900 rounded shadow my-4 w-auto"
                                     >
                                         <div
                                             class="px-4 py-1 text-white grid grid-cols-2"
@@ -301,7 +301,7 @@
                                     <button
                                         id="dropdownNavbarLinkAbout"
                                         data-dropdown-toggle="dropdownNavbarAbout"
-                                        :class="`text-white hover:bg-gray-700 md:hover:bg-transparent pl-3 pr-4 py-2 md:hover:text-white md:p-0 md:py-2 font-medium flex items-center justify-between w-full md:w-auto ${
+                                        :class="`text-white hover:text-custome-orange md:hover:bg-transparent pl-3 pr-4 py-2 hover:text-custome-orange md:p-0 md:py-2 font-medium flex items-center justify-between w-full md:w-auto ${
                                             activePage == 'about'
                                                 ? 'md:border-b-2 md:border-custome-orange'
                                                 : ''
@@ -324,7 +324,7 @@
                                     <!-- Dropdown menu -->
                                     <div
                                         id="dropdownNavbarAbout"
-                                        class="hidden bg-gray-700 text-base z-10 list-none divide-y divide-gray-900 rounded shadow my-4 w-[480px]"
+                                        class="hidden bg-gray-700 text-base z-10 list-none divide-y divide-gray-900 rounded shadow my-4 w-auto"
                                     >
                                         <div
                                             class="px-4 py-2 text-white grid grid-cols-1"
@@ -394,7 +394,7 @@
                                 <li>
                                     <a
                                         href="/news"
-                                        :class="`text-white hover:bg-gray-700 border-b border-gray-900 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-white md:p-0 md:py-2 ${
+                                        :class="`text-white hover:text-custome-orange border-b border-gray-900 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 hover:text-custome-orange md:p-0 md:py-2 ${
                                             activePage == 'news'
                                                 ? 'md:border-b-2 md:border-custome-orange'
                                                 : ''
@@ -405,7 +405,7 @@
                                 <li>
                                     <a href="/donors">
                                         <button
-                                            class="text-xs ml-2 py-1.5 px-2.5 my-4 md:my-0 md:mt-0 bg-white rounded-md text-black"
+                                            class="text-xs ml-2 py-1.5 px-2.5 my-4 md:my-0 md:mt-0 bg-white rounded-md text-black hover:bg-custome-orange hover:text-white"
                                         >
                                             Donate
                                         </button>

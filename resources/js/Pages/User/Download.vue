@@ -72,11 +72,12 @@
                                     </tr>
                                 </thead>
                                 <tbody
-                                    class="text-sm leading-loose items-start"
+                                    class="text-sm leading-loose items-start bg-white text-black hover:bg-[#FFC9B0]"
                                 >
                                     <tr
                                         v-for="(row, index) in os_versions"
                                         :key="index"
+                                        class="hover:bg-[#FFC9B0]"
                                     >
                                         <td
                                             class="px-4 py-2 border border-black"
