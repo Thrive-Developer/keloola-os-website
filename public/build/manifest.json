@@ -17,17 +17,17 @@
     "isEntry": true
   },
   "resources/css/user.css": {
-    "file": "assets/user-BQkooDgh.css",
+    "file": "assets/user-DC3NFPs8.css",
     "src": "resources/css/user.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-lo1zM3p8.js",
+    "file": "assets/app-B3oe5-Ci.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-J9Ci05rq.css"
+      "assets/app-tctL8ail.css"
     ]
   }
 }
