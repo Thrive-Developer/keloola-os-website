@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/Path%2034.svg">
 
     <!-- MS Tile - for Microsoft apps-->
-    <meta name="msapplication-TileImage" content="https://www.keloola.com/icons/Keloola Icon 32x32.svg">
+    <meta name="msapplication-TileImage" content="/assets/Path%2034.svg">
 
     <!-- Fb & Whatsapp -->
     <meta property="og:site_name" content="Keloola OS">
