@@ -453,25 +453,17 @@
                 together.
             </p>
             <div class="mt-20">
-                <div class="flex justify-center gap-14">
-                    <div
-                        class="bg-custome-dark w-[250px] rounded-full p-6 flex justify-center"
-                    >
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="bg-custome-dark w-[250px] rounded-full p-6 flex justify-center">
                         <img src="/assets/partners/bright-logo.png" class="img-fluid" alt="Bright Corporation">
                     </div>
-                    <div
-                        class="bg-custome-dark w-[250px] rounded-full p-6 flex justify-center"
-                    >
+                    <div class="bg-custome-dark w-[250px] rounded-full p-6 flex justify-center">
                         <img src="/assets/partners/thrive-logo.png" class="img-fluid" alt="Thrive IT Solutions">
                     </div>
-                    <div
-                        class="bg-custome-dark w-[250px] rounded-full p-6 flex justify-center"
-                    >
+                    <div class="bg-custome-dark w-[250px] rounded-full p-6 flex justify-center">
                         <img src="/assets/partners/ET-logo.png" class="img-fluid" alt="Einstein Technologies">
                     </div>
-                    <div
-                        class="bg-custome-dark w-[250px] rounded-full p-6 flex justify-center"
-                    >
+                    <div class="bg-custome-dark w-[250px] rounded-full p-6 flex justify-center">
                         <img src="/assets/partners/tableads-logo.png" class="img-fluid" alt="Table Ads">
                     </div>
                 </div>
