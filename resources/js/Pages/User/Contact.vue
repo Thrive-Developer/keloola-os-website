@@ -99,7 +99,7 @@
                                 button_get_involved && button_get_involved.link
                             "
                             :href="button_get_involved.link"
-                            class="text-white bg-custome-orange p-2.5 rounded-lg mx-auto mt-4 font-semibold text-sm"
+                            class="text-white bg-custome-orange px-10 py-2 rounded-lg mx-auto mt-4 font-semibold text-sm"
                             >{{ button_get_involved.value }}</a
                         >
                     </div>
@@ -111,11 +111,9 @@
                     Can't find what you're looking for?
                 </p>
                 <p class="text-sm my-4 leading-loose">
-                    For queries related to passwords, accounts, registration and
-                    moderation, email the administration team at
-                    admin@linuxmint.com. <br />
-                    For other queries, send an email to root@linuxmint.com. o
-                    not address support queries to these addresses.
+                    For queries related to passwords, accounts, registration and moderation, email the administration team at <a href="mailto:hello@keloola.com" class="text-custome-orange">hello@keloola.com</a>. <br />
+                    For other queries, send an email to <a href="mailto:product@keloola.com" class="text-custome-orange">product@keloola.com</a>. <br />
+                    Do not address support queries to these addresses.
                 </p>
             </div>
             <!-- End Content -->
