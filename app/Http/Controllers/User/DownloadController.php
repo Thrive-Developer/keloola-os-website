@@ -23,10 +23,10 @@ class DownloadController extends Controller
         ]);
     }
 
-    public function detail_version($slug)
+    public function detail_version(Request $request, $slug)
     {
         $os_version = OsVersion::where('slug', $slug)->first();
-        $editions = OsEdition::where('os_version_id', $os_version->id)->orderBy('id', 'desc')->take(1)->get();
+        $editions = OsEdition::where('os_version_id', $os_version->id)->byEdition($request->edition)->get();
 
         Inertia::setRootView('user');
         return Inertia::render('User/Tambora', [

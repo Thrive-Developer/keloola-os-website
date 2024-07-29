@@ -24,8 +24,7 @@
                                     Many thanks to all our sponsors!
                                 </p>
                                 <p class="text-sm mt-2">
-                                    Keloola OS is proudly sponsored by the
-                                    following organizations.
+                                    Keloola OS is proudly sponsored by the following organizations.
                                 </p>
                             </div>
                             <button
@@ -36,7 +35,7 @@
                                 {{ btn_sponsor.value }}
                             </button>
                         </div>
-                        <div>
+                        <div v-if="gold_sponsors.length > 0">
                             <div
                                 class="flex justify-between items-center gap-3"
                             >
@@ -51,14 +50,6 @@
                             <div
                                 class="grid grid-cols-2 lg:grid-cols-2 gap-6 my-14 lg:px-36"
                             >
-                                <!-- <div class="flex items-center gap-2">
-                                    <img src="assets/Path 55.svg" alt="image">
-                                    <p class="font-bold text-2xl">LOGO</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="assets/Path 55.svg" alt="image">
-                                    <p class="font-bold text-2xl">LOGO</p>
-                                </div> -->
                                 <div
                                     class="flex items-center gap-2"
                                     v-for="(gold, index) in gold_sponsors"
@@ -69,11 +60,10 @@
                                         alt="image"
                                         width="400"
                                     />
-                                    <!-- <p class="font-bold text-2xl">LOGO</p> -->
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div v-if="silver_sponsors.length > 0">
                             <div
                                 class="flex justify-between items-center gap-3"
                             >
@@ -88,14 +78,6 @@
                             <div
                                 class="grid grid-cols-2 lg:grid-cols-4 gap-6 my-14 lg:px-36"
                             >
-                                <!-- <div class="flex items-center gap-2">
-                                    <img src="assets/Path 55.svg" alt="image" />
-                                    <p class="font-bold text-2xl">LOGO</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="assets/Path 55.svg" alt="image" />
-                                    <p class="font-bold text-2xl">LOGO</p>
-                                </div> -->
                                 <div
                                     class="flex items-center gap-2"
                                     v-for="(silver, index) in silver_sponsors"
@@ -106,11 +88,10 @@
                                         alt="image"
                                         width="300"
                                     />
-                                    <!-- <p class="font-bold text-2xl">LOGO</p> -->
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div v-if="bronze_sponsors.length > 0">
                             <div
                                 class="flex justify-between items-center gap-3"
                             >
@@ -125,54 +106,6 @@
                             <div
                                 class="grid grid-cols-2 lg:grid-cols-4 gap-6 my-14 lg:px-36"
                             >
-                                <!-- <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img src="assets/Path 55.svg" alt="image" />
-                                    <p class="font-bold text-2xl">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img src="assets/Path 55.svg" alt="image" />
-                                    <p class="font-bold text-2xl">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img src="assets/Path 55.svg" alt="image" />
-                                    <p class="font-bold text-2xl">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img src="assets/Path 55.svg" alt="image" />
-                                    <p class="font-bold text-2xl">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img src="assets/Path 55.svg" alt="image" />
-                                    <p class="font-bold text-2xl">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img src="assets/Path 55.svg" alt="image" />
-                                    <p class="font-bold text-2xl">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img src="assets/Path 55.svg" alt="image" />
-                                    <p class="font-bold text-2xl">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img src="assets/Path 55.svg" alt="image" />
-                                    <p class="font-bold text-2xl">LOGO</p>
-                                </div> -->
                                 <div
                                     class="flex items-center gap-2"
                                     v-for="(bronze, index) in bronze_sponsors"
@@ -183,11 +116,10 @@
                                         alt="image"
                                         width="200"
                                     />
-                                    <!-- <p class="font-bold text-2xl">LOGO</p> -->
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div v-if="community_sponsors.length > 0">
                             <div
                                 class="flex justify-between items-center gap-3"
                             >
@@ -202,146 +134,6 @@
                             <div
                                 class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-6 my-10 lg:px-36"
                             >
-                                <!-- <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img
-                                        src="assets/Path 55.svg"
-                                        alt="image"
-                                        class="h-8 w-auto"
-                                    />
-                                    <p class="font-bold text-xs">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img
-                                        src="assets/Path 55.svg"
-                                        alt="image"
-                                        class="h-8 w-auto"
-                                    />
-                                    <p class="font-bold text-xs">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img
-                                        src="assets/Path 55.svg"
-                                        alt="image"
-                                        class="h-8 w-auto"
-                                    />
-                                    <p class="font-bold text-xs">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img
-                                        src="assets/Path 55.svg"
-                                        alt="image"
-                                        class="h-8 w-auto"
-                                    />
-                                    <p class="font-bold text-xs">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img
-                                        src="assets/Path 55.svg"
-                                        alt="image"
-                                        class="h-8 w-auto"
-                                    />
-                                    <p class="font-bold text-xs">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img
-                                        src="assets/Path 55.svg"
-                                        alt="image"
-                                        class="h-8 w-auto"
-                                    />
-                                    <p class="font-bold text-xs">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img
-                                        src="assets/Path 55.svg"
-                                        alt="image"
-                                        class="h-8 w-auto"
-                                    />
-                                    <p class="font-bold text-xs">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img
-                                        src="assets/Path 55.svg"
-                                        alt="image"
-                                        class="h-8 w-auto"
-                                    />
-                                    <p class="font-bold text-xs">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img
-                                        src="assets/Path 55.svg"
-                                        alt="image"
-                                        class="h-8 w-auto"
-                                    />
-                                    <p class="font-bold text-xs">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img
-                                        src="assets/Path 55.svg"
-                                        alt="image"
-                                        class="h-8 w-auto"
-                                    />
-                                    <p class="font-bold text-xs">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img
-                                        src="assets/Path 55.svg"
-                                        alt="image"
-                                        class="h-8 w-auto"
-                                    />
-                                    <p class="font-bold text-xs">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img
-                                        src="assets/Path 55.svg"
-                                        alt="image"
-                                        class="h-8 w-auto"
-                                    />
-                                    <p class="font-bold text-xs">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img
-                                        src="assets/Path 55.svg"
-                                        alt="image"
-                                        class="h-8 w-auto"
-                                    />
-                                    <p class="font-bold text-xs">LOGO</p>
-                                </div>
-                                <div
-                                    class="flex justify-center items-center gap-2"
-                                >
-                                    <img
-                                        src="assets/Path 55.svg"
-                                        alt="image"
-                                        class="h-8 w-auto"
-                                    />
-                                    <p class="font-bold text-xs">LOGO</p>
-                                </div> -->
 
                                 <div
                                     class="flex items-center gap-2"
@@ -355,7 +147,6 @@
                                         alt="image"
                                         width="100"
                                     />
-                                    <!-- <p class="font-bold text-2xl">LOGO</p> -->
                                 </div>
                             </div>
                         </div>

@@ -453,39 +453,20 @@
                 together.
             </p>
             <div class="mt-20">
-                <div class="flex justify-center gap-14">
-                    <div
-                        class="bg-white w-[250px] rounded-full p-2 flex justify-center"
-                    >
-                        <img
-                            src="https://os.keloola.com/partners/bright-180x64.png"
-                            alt="image"
-                        />
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="bg-custome-dark w-[250px] rounded-full p-6 flex justify-center">
+                        <img src="/assets/partners/bright-logo.png" class="img-fluid" alt="Bright Corporation">
                     </div>
-                    <div
-                        class="bg-white w-[250px] rounded-full p-2 flex justify-center"
-                    >
-                        <img
-                            src="https://os.keloola.com/partners/et-175x60.png"
-                            alt="image"
-                        />
+                    <div class="bg-custome-dark w-[250px] rounded-full p-6 flex justify-center">
+                        <img src="/assets/partners/thrive-logo.png" class="img-fluid" alt="Thrive IT Solutions">
+                    </div>
+                    <div class="bg-custome-dark w-[250px] rounded-full p-6 flex justify-center">
+                        <img src="/assets/partners/ET-logo.png" class="img-fluid" alt="Einstein Technologies">
+                    </div>
+                    <div class="bg-custome-dark w-[250px] rounded-full p-6 flex justify-center">
+                        <img src="/assets/partners/tableads-logo.png" class="img-fluid" alt="Table Ads">
                     </div>
                 </div>
-
-                <!-- <div class="flex justify-center gap-14">
-                    <div class="bg-white w-[250px] h-[46.44px] rounded-full"></div>
-                    <div class="bg-custome-orange w-[250px] h-[46.44px] rounded-full"></div>
-                    <div class="bg-white w-[250px] h-[46.44px] rounded-full"></div>
-                </div>
-                <div class="flex justify-center gap-14 my-14">
-                    <div class="bg-custome-orange w-[250px] h-[46.44px] rounded-full"></div>
-                    <div class="bg-white w-[250px] h-[46.44px] rounded-full"></div>
-                </div>
-                <div class="flex justify-center gap-14">
-                    <div class="bg-white w-[250px] h-[46.44px] rounded-full"></div>
-                    <div class="bg-custome-orange w-[250px] h-[46.44px] rounded-full"></div>
-                    <div class="bg-white w-[250px] h-[46.44px] rounded-full"></div>
-                </div> -->
             </div>
         </div>
     </div>

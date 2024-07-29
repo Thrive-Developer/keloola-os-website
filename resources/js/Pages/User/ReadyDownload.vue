@@ -67,7 +67,7 @@
                                 class="mt-6 flex justify-start items-center gap-4"
                             >
                                 <a
-                                    :href="edition.download_link"
+                                    :href="`/download/${os_version.slug}?edition=${edition.slug}`"
                                     class="text-white bg-custome-orange p-3 rounded-lg mr-4 text-xs"
                                     >Download</a
                                 >

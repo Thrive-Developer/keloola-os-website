@@ -105,4 +105,11 @@ class OsEdition extends Model
     {
         return $this->belongsTo(OsVersion::class);
     }
+
+    public function scopeByEdition($builder, $slug)
+    {
+        if ($slug) {
+            return $builder->where('slug', $slug)->take(1);
+        }
+    }
 }
