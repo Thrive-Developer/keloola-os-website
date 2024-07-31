@@ -20,22 +20,43 @@
                             </thead>
                             <tbody class="text-sm bg-white text-black">
                                 <tr class="hover:bg-[#FFC9B0]">
-                                    <td class="px-6 py-4 border border-black text-left"><div class="flex items-center"><div class="w-6 h-4 bg-custome-orange mr-4"></div></div></td>
-                                    <td class="px-4 py-2 border border-black">Clement Lefebvre</td>
-                                    <td class="px-4 py-2 border border-black">“Clem”</td>
-                                    <td class="px-4 py-2 border border-black">Overall project and development team</td>
+                                    <td class="px-6 py-4 border border-black text-left">
+                                        <div class="flex items-center">
+                                            <svg width="25" height="20">
+                                            <rect x="0" y="0" width="25" height="20" fill="#CE1126" />
+                                            <rect x="0" y="10" width="25" height="10" fill="#e5e7eb" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-2 border border-black">Eddy Yansen</td>
+                                    <td class="px-4 py-2 border border-black"><a href="https://www.linkedin.com/in/eddyyansen/" target="_blank" rel="noopener noreferrer">“eddyyansen”</a></td>
+                                    <td class="px-4 py-2 border border-black">Founder and Chief Executive Officer</td>
                                 </tr>
                                 <tr class="hover:bg-[#FFC9B0]">
-                                    <td class="px-6 py-4 border border-black text-left"><div class="flex items-center"><div class="w-6 h-4 bg-custome-orange mr-4"></div></div></td>
-                                    <td class="px-4 py-2 border border-black">Vincent Vermeulen</td>
-                                    <td class="px-4 py-2 border border-black">“Xenopeel”</td>
-                                    <td class="px-4 py-2 border border-black">Administration and moderation teams</td>
+                                    <td class="px-6 py-4 border border-black text-left">
+                                        <div class="flex items-center">
+                                            <svg width="25" height="20">
+                                            <rect x="0" y="0" width="25" height="20" fill="#CE1126" />
+                                            <rect x="0" y="10" width="25" height="10" fill="#e5e7eb" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-2 border border-black">Ryno Azhar</td>
+                                    <td class="px-4 py-2 border border-black"><a href="https://www.linkedin.com/in/ryno-azhar-18697b39/" target="_blank" rel="noopener noreferrer">“ryno-azhar-18697b39”</a></td>
+                                    <td class="px-4 py-2 border border-black">Technical Director</td>
                                 </tr>
                                 <tr class="hover:bg-[#FFC9B0]">
-                                    <td class="px-6 py-4 border border-black text-left"><div class="flex items-center"><div class="w-6 h-4 bg-custome-orange mr-4"></div></div></td>
-                                    <td class="px-4 py-2 border border-black">Oscar799</td>
-                                    <td class="px-4 py-2 border border-black">“Oscar799”</td>
-                                    <td class="px-4 py-2 border border-black">Administration and moderation teams</td>
+                                    <td class="px-6 py-4 border border-black text-left">
+                                        <div class="flex items-center">
+                                            <svg width="25" height="20">
+                                            <rect x="0" y="0" width="25" height="20" fill="#CE1126" />
+                                            <rect x="0" y="10" width="25" height="10" fill="#e5e7eb" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-2 border border-black">Frendi Triarista</td>
+                                    <td class="px-4 py-2 border border-black"><a href="https://www.linkedin.com/in/frendi-triarista/" target="_blank" rel="noopener noreferrer">“frendi-triarista”</a></td>
+                                    <td class="px-4 py-2 border border-black">Head of Software Engineer</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -51,68 +72,21 @@
                                     <th scope="col" class="px-4 py-2 border border-black">LINK</th>
                                 </tr>
                             </thead>
-                            <!-- <tbody class="text-sm">
-                                <tr>
-                                    <td class="px-4 py-2 border border-black">Develop Team</td>
-                                    <td class="px-4 py-2 border border-black">Software development and bug fixing</td>
-                                    <td class="px-4 py-2 border border-black">Github</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-2 border border-black">Administration and Moderation Teams</td>
-                                    <td class="px-4 py-2 border border-black">Administration and moderation (forums, community website and IRC)</td>
-                                    <td class="px-4 py-2 border border-black">Community Website</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-2 border border-black"></td>
-                                    <td class="px-4 py-2 border border-black"></td>
-                                    <td class="px-4 py-2 border border-black">Forums</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-2 border border-black">Design Team</td>
-                                    <td class="px-4 py-2 border border-black">Web and user interface design</td>
-                                    <td class="px-4 py-2 border border-black"></td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-2 border border-black">Translation Teams</td>
-                                    <td class="px-4 py-2 border border-black">Software translations</td>
-                                    <td class="px-4 py-2 border border-black">Launchpad</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-2 border border-black">QA Team</td>
-                                    <td class="px-4 py-2 border border-black">Quality testing</td>
-                                    <td class="px-4 py-2 border border-black">Community Website</td>
-                                </tr>
-                            </tbody> -->
                             <tbody class="text-sm bg-white text-black">
                                 <tr class="hover:bg-[#FFC9B0]"> 
                                     <td class="px-4 py-2 border border-black">Develop Team</td>
                                     <td class="px-4 py-2 border border-black">Software development and bug fixing</td>
-                                    <td class="px-4 py-2 border border-black">Github</td>
-                                </tr>
-                                <tr class="hover:bg-[#FFC9B0]"> 
-                                    <td class="px-4 py-2 border border-black">Administration and Moderation Teams</td>
-                                    <td class="px-4 py-2 border border-black">Administration and moderation (forums, community website and IRC)</td>
-                                    <td class="px-4 py-2 border border-black">Community Website</td>
-                                </tr>
-                                <tr class="hover:bg-[#FFC9B0]"> 
-                                    <td class="px-4 py-2 border border-black"></td>
-                                    <td class="px-4 py-2 border border-black"></td>
-                                    <td class="px-4 py-2 border border-black">Forums</td>
+                                    <td class="px-4 py-2 border border-black"><a href="https://github.com/orgs/Thrive-Developer/people" target="_blank" rel="noopener noreferrer">Github</a></td>
                                 </tr>
                                 <tr class="hover:bg-[#FFC9B0]"> 
                                     <td class="px-4 py-2 border border-black">Design Team</td>
                                     <td class="px-4 py-2 border border-black">Web and user interface design</td>
-                                    <td class="px-4 py-2 border border-black"></td>
+                                    <td class="px-4 py-2 border border-black"><a href="https://www.figma.com/@keloola" target="_blank" rel="noopener noreferrer">Figma</a></td>
                                 </tr>
                                 <tr class="hover:bg-[#FFC9B0]"> 
-                                    <td class="px-4 py-2 border border-black">Translation Teams</td>
-                                    <td class="px-4 py-2 border border-black">Software translations</td>
-                                    <td class="px-4 py-2 border border-black">Launchpad</td>
-                                </tr>
-                                <tr class="hover:bg-[#FFC9B0]"> 
-                                    <td class="px-4 py-2 border border-black">QA Team</td>
-                                    <td class="px-4 py-2 border border-black">Quality testing</td>
-                                    <td class="px-4 py-2 border border-black">Community Website</td>
+                                    <td class="px-4 py-2 border border-black">Another Teams</td>
+                                    <td class="px-4 py-2 border border-black">Managing projects, administrative support, quality assurance, documentation, and customer support</td>
+                                    <td class="px-4 py-2 border border-black"><a href="https://www.linkedin.com/company/thriveconsultant/people/" target="_blank" rel="noopener noreferrer">Linkedin</a></td>
                                 </tr>
                             </tbody>
                         </table>
