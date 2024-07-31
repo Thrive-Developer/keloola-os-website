@@ -2,6 +2,7 @@ import "./bootstrap";
 import { createApp, h } from "vue";
 import { createInertiaApp } from "@inertiajs/vue3";
 import Layout from "../js/Layouts/App.vue";
+import CKEditor from '@ckeditor/ckeditor5-vue';
 
 createInertiaApp({
     resolve: (name) => {
@@ -13,6 +14,7 @@ createInertiaApp({
     setup({ el, App, props, plugin }) {
         createApp({ render: () => h(App, props) })
             .use(plugin)
+            .use(CKEditor)
             .mount(el);
     },
 });

@@ -70,15 +70,42 @@
 <script>
 import { Head, Link, router } from "@inertiajs/vue3";
 import { reactive } from "vue";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import CKEditor from "@ckeditor/ckeditor5-vue";
 import UploadAdapter from "../../Plugins/UploadAdapter.js";
+import {
+	ClassicEditor,
+	AccessibilityHelp,
+	Autoformat,
+	AutoLink,
+	Autosave,
+	Bold,
+	Code,
+	CodeBlock,
+	Essentials,
+	GeneralHtmlSupport,
+	Heading,
+	HtmlEmbed,
+	Italic,
+	Paragraph,
+	SelectAll,
+	ShowBlocks,
+	Table,
+	TableCaption,
+	TableCellProperties,
+	TableColumnResize,
+	TableProperties,
+	TableToolbar,
+	TextPartLanguage,
+	TextTransformation,
+	Title,
+	Undo
+} from 'ckeditor5';
+
+import 'ckeditor5/ckeditor5.css';
+
 
 export default {
     components: {
         Head,
-        Link,
-        ckeditor: CKEditor.component,
     },
 
     props: {
@@ -99,29 +126,52 @@ export default {
             editorConfig: {
                 extraPlugins: [uploadAdapterPlugin],
                 toolbar: [
-                    "undo",
-                    "redo",
-                    "|",
-                    "heading",
-                    "|",
-                    "bold",
-                    "italic",
-                    "link",
-                    "bulletedList",
-                    "numberedList",
-                    "|",
-                    "indent",
-                    "outdent",
-                    "|",
-                    "blockQuote",
-                    "insertTable",
-                    "|",
-                    "imageUpload",
-                    "mediaEmbed",
-                    // "alignment",
-                    // "fontFamily",
-                    // "fontSize",
+                    'undo',
+					'redo',
+					'|',
+					'showBlocks',
+					'selectAll',
+					'textPartLanguage',
+					'|',
+					'heading',
+					'|',
+					'bold',
+					'italic',
+					'code',
+					'|',
+					'insertTable',
+					'codeBlock',
+					'htmlEmbed',
+					'|',
+					'accessibilityHelp'
                 ],
+                plugins: [
+                    AccessibilityHelp,
+                    Autoformat,
+                    AutoLink,
+                    Autosave,
+                    Bold,
+                    Code,
+                    CodeBlock,
+                    Essentials,
+                    GeneralHtmlSupport,
+                    Heading,
+                    HtmlEmbed,
+                    Italic,
+                    Paragraph,
+                    SelectAll,
+                    ShowBlocks,
+                    Table,
+                    TableCaption,
+                    TableCellProperties,
+                    TableColumnResize,
+                    TableProperties,
+                    TableToolbar,
+                    TextPartLanguage,
+                    TextTransformation,
+                    Title,
+                    Undo
+                ]
             },
         });
 

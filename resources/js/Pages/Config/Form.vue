@@ -131,7 +131,7 @@
 <script>
 import { Head, Link, router } from "@inertiajs/vue3";
 import { reactive } from "vue";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+// import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import CKEditor from "@ckeditor/ckeditor5-vue";
 import UploadAdapter from "../../Plugins/UploadAdapter.js";
 
