@@ -68,44 +68,63 @@
 </template>
 
 <script>
-import { Head, Link, router } from "@inertiajs/vue3";
+import { Head, router } from "@inertiajs/vue3";
 import { reactive } from "vue";
-import UploadAdapter from "../../Plugins/UploadAdapter.js";
 import {
 	ClassicEditor,
 	AccessibilityHelp,
 	Autoformat,
+	AutoImage,
 	AutoLink,
 	Autosave,
+	BalloonToolbar,
+	BlockQuote,
+	BlockToolbar,
 	Bold,
+	CloudServices,
 	Code,
 	CodeBlock,
 	Essentials,
 	GeneralHtmlSupport,
 	Heading,
+	Highlight,
+	HtmlComment,
 	HtmlEmbed,
+	ImageBlock,
+	ImageCaption,
+	ImageInsertViaUrl,
+	ImageToolbar,
+	ImageUpload,
+	Indent,
+	IndentBlock,
 	Italic,
+	Link,
+	List,
 	Paragraph,
+	PasteFromOffice,
 	SelectAll,
 	ShowBlocks,
+	SourceEditing,
 	Table,
 	TableCaption,
 	TableCellProperties,
 	TableColumnResize,
 	TableProperties,
 	TableToolbar,
-	TextPartLanguage,
 	TextTransformation,
-	Title,
-	Undo
+	TodoList,
+	Underline,
+	Undo,
+	MediaEmbed,
+	Base64UploadAdapter 
 } from 'ckeditor5';
-
 import 'ckeditor5/ckeditor5.css';
-
+import UploadAdapter from "../../Plugins/UploadAdapter.js";
 
 export default {
     components: {
         Head,
+        // ckeditor: CKEditor.component,
     },
 
     props: {
@@ -125,53 +144,166 @@ export default {
             editor: ClassicEditor,
             editorConfig: {
                 extraPlugins: [uploadAdapterPlugin],
-                toolbar: [
-                    'undo',
-					'redo',
-					'|',
-					'showBlocks',
-					'selectAll',
-					'textPartLanguage',
-					'|',
-					'heading',
-					'|',
-					'bold',
-					'italic',
-					'code',
-					'|',
-					'insertTable',
-					'codeBlock',
-					'htmlEmbed',
-					'|',
-					'accessibilityHelp'
-                ],
+                toolbar: {
+                    items: [
+                        'undo',
+                        'redo',
+                        '|',
+                        // 'showBlocks',
+                        // 'selectAll',
+                        // 'textPartLanguage',
+                        // '|',
+                        'heading',
+                        '|',
+                        'bold',
+                        'italic',
+                        'link',
+                        'bulletedList',
+                        'numberedList',
+                        // 'underline',
+                        // 'code',
+                        '|',
+                        // 'todoList',
+                        'outdent',
+                        'indent',
+                        '|',
+                        // 'highlight',
+                        'insertTable',
+                        'blockQuote',
+                        'insertImage',
+                        'mediaEmbed',
+                        'codeBlock',
+                        // 'htmlEmbed',
+                        // '|',
+                        // 'accessibilityHelp'
+                    ],
+                    shouldNotGroupWhenFull: false
+                },
                 plugins: [
                     AccessibilityHelp,
                     Autoformat,
+                    AutoImage,
                     AutoLink,
                     Autosave,
+                    BalloonToolbar,
+                    BlockQuote,
+                    BlockToolbar,
                     Bold,
+                    CloudServices,
                     Code,
                     CodeBlock,
                     Essentials,
                     GeneralHtmlSupport,
                     Heading,
+                    Highlight,
+                    HtmlComment,
                     HtmlEmbed,
+                    ImageBlock,
+                    ImageCaption,
+                    ImageInsertViaUrl,
+                    ImageToolbar,
+                    ImageUpload,
+                    Indent,
+                    IndentBlock,
                     Italic,
+                    Link,
+                    List,
                     Paragraph,
+                    PasteFromOffice,
                     SelectAll,
                     ShowBlocks,
+                    SourceEditing,
                     Table,
                     TableCaption,
                     TableCellProperties,
                     TableColumnResize,
                     TableProperties,
                     TableToolbar,
-                    TextPartLanguage,
                     TextTransformation,
-                    Title,
-                    Undo
-                ]
+                    TodoList,
+                    Underline,
+                    Undo,
+                    MediaEmbed,
+                    Base64UploadAdapter
+                ],
+                heading: {
+                    options: [
+                        {
+                            model: 'paragraph',
+                            title: 'Paragraph',
+                            class: 'ck-heading_paragraph'
+                        },
+                        {
+                            model: 'heading1',
+                            view: 'h1',
+                            title: 'Heading 1',
+                            class: 'ck-heading_heading1'
+                        },
+                        {
+                            model: 'heading2',
+                            view: 'h2',
+                            title: 'Heading 2',
+                            class: 'ck-heading_heading2'
+                        },
+                        {
+                            model: 'heading3',
+                            view: 'h3',
+                            title: 'Heading 3',
+                            class: 'ck-heading_heading3'
+                        },
+                        {
+                            model: 'heading4',
+                            view: 'h4',
+                            title: 'Heading 4',
+                            class: 'ck-heading_heading4'
+                        },
+                        {
+                            model: 'heading5',
+                            view: 'h5',
+                            title: 'Heading 5',
+                            class: 'ck-heading_heading5'
+                        },
+                        {
+                            model: 'heading6',
+                            view: 'h6',
+                            title: 'Heading 6',
+                            class: 'ck-heading_heading6'
+                        }
+                    ]
+                },
+                balloonToolbar: ['bold', 'italic', '|', 'link', '|', 'bulletedList', 'numberedList'],
+                blockToolbar: ['bold', 'italic', '|', 'link', 'insertTable', '|', 'bulletedList', 'numberedList', 'outdent', 'indent'],
+                htmlSupport: {
+                    allow: [
+                        {
+                            name: /^.*$/,
+                            styles: true,
+                            attributes: true,
+                            classes: true
+                        }
+                    ]
+                },
+                initialData: '',
+                link: {
+                    addTargetToExternalLinks: true,
+                    defaultProtocol: 'https://',
+                    decorators: {
+                        toggleDownloadable: {
+                            mode: 'manual',
+                            label: 'Downloadable',
+                            attributes: {
+                                download: 'file'
+                            }
+                        }
+                    }
+                },
+                placeholder: 'Type or paste your content here!',
+                table: {
+                    contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableProperties', 'tableCellProperties']
+                },
+                image: {
+                    toolbar: ['imageTextAlternative']
+                },
             },
         });
 
