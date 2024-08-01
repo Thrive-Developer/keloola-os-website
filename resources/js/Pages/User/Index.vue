@@ -10,9 +10,9 @@
                     class="flex justify-between container mx-auto px-4 sm:px-16"
                 >
                     <div class="mt-10 mb-36 w-full md:w-1/2">
-                        <p class="text-custome-orange">“Victoria”</p>
+                        <p class="text-custome-orange">“{{ latest_version.code_name }}”</p>
                         <h1 class="text-white text-5xl font-bold my-2">
-                            Keloola OS
+                            Keloola OS {{ latest_version.version }}
                         </h1>
                         <p class="text-white">
                             Unmatched Stability for Business PCs and Laptops.
