@@ -20,6 +20,8 @@ class HomeController extends Controller
         $button_installation_instruction = Config::where('key', 'BUTTON_INSTALLATION_INSTRUCTIONS')->first();
         $latest_version = OsVersion::latest()->first();
 
+        // dd($latest_version, $button_download);
+
         Inertia::setRootView('user');
         return Inertia::render('User/Index', [
             'news' => $news,
