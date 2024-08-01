@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-<style scope>
+<style>
 pre {
     background: #2d2d2d;
     color: #f8f8f2;
