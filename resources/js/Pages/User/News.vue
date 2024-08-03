@@ -5,7 +5,7 @@
             <div class="container mx-auto px-4 sm:px-16 -mt-36">
                 <h1 class="text-custome-orange text-3xl font-semibold">News</h1>
             </div>
-            <div class="bg-custome-graylight" >
+            <div class="bg-custome-graylight">
                 <div class="container mx-auto px-4 sm:px-16 pt-16 pb-12">
                     <p class="text-center text-white mt-1 text-sm">
                         Click news title to get to the article.
@@ -20,7 +20,10 @@
                         >
                             <div class="flex justify-between items-center">
                                 <p class="text-white text-sm">
-                                    {{ item.created_at && fDate(item.created_at) }}
+                                    {{
+                                        item.created_at &&
+                                        fDate(item.created_at)
+                                    }}
                                 </p>
                                 <div
                                     class="text-white bg-custome-orange py-1 px-5 rounded-md text-sm"
@@ -29,7 +32,9 @@
                                 </div>
                             </div>
                             <p class="text-custome-orange mt-4 mb-4 text-sm">
-                                <a :href="`news/${item.slug}`">{{ item.title }}</a>
+                                <a :href="`news/${item.slug}`">{{
+                                    item.title
+                                }}</a>
                             </p>
                             <p class="text-white text-sm leading-loose">
                                 {{ truncate(stripHtmlTags(item.content)) }}
@@ -41,8 +46,8 @@
             <!-- End Content -->
         </template>
     </Navbar>
-    
-    <Footer/>
+
+    <Footer />
 </template>
 
 <script>
@@ -82,6 +87,5 @@ export default {
             stripHtmlTags,
         };
     },
-
 };
 </script>

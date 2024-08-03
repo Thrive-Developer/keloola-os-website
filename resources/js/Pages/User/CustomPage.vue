@@ -9,6 +9,7 @@
             </div>
             <div
                 class="bg-gradient-to-r from-[#413E1E] via-custome-gray via-40% to-custome-gray mt-3 py-12 text-white w-full"
+                style="min-height: 369px"
             >
                 <div class="container mx-auto px-4 sm:px-16 w-full">
                     <span v-html="custom_page.content"></span>
@@ -38,3 +39,31 @@ export default {
     },
 };
 </script>
+
+<style>
+pre {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+}
+
+code {
+    background: #f8f8f2;
+    color: #2d2d2d;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+}
+
+pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+}
+</style>

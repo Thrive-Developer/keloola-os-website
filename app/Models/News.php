@@ -20,7 +20,7 @@ class News extends Model
      *
      * @var string[]
      */
-    protected $fillable = ['title', 'slug', 'content'];
+    protected $fillable = ['title', 'slug', 'content', 'meta_title', 'meta_description', 'meta_keywords'];
 
     public function saveModel($data)
     {
