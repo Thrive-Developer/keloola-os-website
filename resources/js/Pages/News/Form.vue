@@ -46,6 +46,56 @@
                                         >{{ errors.content }}</small
                                     >
                                 </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Meta Title</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        autocomplete="off"
+                                        v-model="model.meta_title"
+                                    />
+                                    <small
+                                        class="form-text text-danger"
+                                        v-if="errors.meta_title"
+                                        >{{ errors.meta_title }}</small
+                                    >
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label"
+                                        >Meta Description</label
+                                    >
+                                    <textarea
+                                        v-model="model.meta_description"
+                                        id="meta_description"
+                                        cols="30"
+                                        rows="5"
+                                        class="form-control"
+                                    ></textarea>
+                                    <small
+                                        class="form-text text-danger"
+                                        v-if="errors.meta_description"
+                                        >{{ errors.meta_description }}</small
+                                    >
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label"
+                                        >Meta Keywords</label
+                                    >
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        autocomplete="off"
+                                        v-model="model.meta_keywords"
+                                    />
+                                    <small
+                                        class="form-text text-danger"
+                                        v-if="errors.meta_keywords"
+                                        >{{ errors.meta_keywords }}</small
+                                    >
+                                </div>
                             </div>
                             <div class="card-footer">
                                 <button
@@ -71,54 +121,54 @@
 import { Head, router } from "@inertiajs/vue3";
 import { reactive } from "vue";
 import {
-	ClassicEditor,
-	AccessibilityHelp,
-	Autoformat,
-	AutoImage,
-	AutoLink,
-	Autosave,
-	BalloonToolbar,
-	BlockQuote,
-	BlockToolbar,
-	Bold,
-	CloudServices,
-	Code,
-	CodeBlock,
-	Essentials,
-	GeneralHtmlSupport,
-	Heading,
-	Highlight,
-	HtmlComment,
-	HtmlEmbed,
-	ImageBlock,
-	ImageCaption,
-	ImageInsertViaUrl,
-	ImageToolbar,
-	ImageUpload,
-	Indent,
-	IndentBlock,
-	Italic,
-	Link,
-	List,
-	Paragraph,
-	PasteFromOffice,
-	SelectAll,
-	ShowBlocks,
-	SourceEditing,
-	Table,
-	TableCaption,
-	TableCellProperties,
-	TableColumnResize,
-	TableProperties,
-	TableToolbar,
-	TextTransformation,
-	TodoList,
-	Underline,
-	Undo,
-	MediaEmbed,
-	Base64UploadAdapter 
-} from 'ckeditor5';
-import 'ckeditor5/ckeditor5.css';
+    ClassicEditor,
+    AccessibilityHelp,
+    Autoformat,
+    AutoImage,
+    AutoLink,
+    Autosave,
+    BalloonToolbar,
+    BlockQuote,
+    BlockToolbar,
+    Bold,
+    CloudServices,
+    Code,
+    CodeBlock,
+    Essentials,
+    GeneralHtmlSupport,
+    Heading,
+    Highlight,
+    HtmlComment,
+    HtmlEmbed,
+    ImageBlock,
+    ImageCaption,
+    ImageInsertViaUrl,
+    ImageToolbar,
+    ImageUpload,
+    Indent,
+    IndentBlock,
+    Italic,
+    Link,
+    List,
+    Paragraph,
+    PasteFromOffice,
+    SelectAll,
+    ShowBlocks,
+    SourceEditing,
+    Table,
+    TableCaption,
+    TableCellProperties,
+    TableColumnResize,
+    TableProperties,
+    TableToolbar,
+    TextTransformation,
+    TodoList,
+    Underline,
+    Undo,
+    MediaEmbed,
+    Base64UploadAdapter,
+} from "ckeditor5";
+import "ckeditor5/ckeditor5.css";
 import UploadAdapter from "../../Plugins/UploadAdapter.js";
 
 export default {
@@ -138,6 +188,9 @@ export default {
             title: props.news ? props.news.title : "",
             slug: props.news ? props.news.slug : "",
             content: props.news ? props.news.content : "",
+            meta_title: props.news ? props.news.meta_title : "",
+            meta_description: props.news ? props.news.meta_description : "",
+            meta_keywords: props.news ? props.news.meta_keywords : "",
         });
 
         let state = reactive({
@@ -147,38 +200,38 @@ export default {
                 extraPlugins: [uploadAdapterPlugin],
                 toolbar: {
                     items: [
-                        'undo',
-                        'redo',
-                        '|',
+                        "undo",
+                        "redo",
+                        "|",
                         // 'showBlocks',
                         // 'selectAll',
                         // 'textPartLanguage',
                         // '|',
-                        'heading',
-                        '|',
-                        'bold',
-                        'italic',
-                        'link',
-                        'bulletedList',
-                        'numberedList',
+                        "heading",
+                        "|",
+                        "bold",
+                        "italic",
+                        "link",
+                        "bulletedList",
+                        "numberedList",
                         // 'underline',
                         // 'code',
-                        '|',
+                        "|",
                         // 'todoList',
-                        'outdent',
-                        'indent',
-                        '|',
+                        "outdent",
+                        "indent",
+                        "|",
                         // 'highlight',
-                        'insertTable',
-                        'blockQuote',
-                        'insertImage',
-                        'mediaEmbed',
-                        'codeBlock',
+                        "insertTable",
+                        "blockQuote",
+                        "insertImage",
+                        // 'mediaEmbed',
+                        "codeBlock",
                         // 'htmlEmbed',
                         // '|',
                         // 'accessibilityHelp'
                     ],
-                    shouldNotGroupWhenFull: false
+                    shouldNotGroupWhenFull: false,
                 },
                 plugins: [
                     AccessibilityHelp,
@@ -225,85 +278,110 @@ export default {
                     Underline,
                     Undo,
                     MediaEmbed,
-                    Base64UploadAdapter
+                    Base64UploadAdapter,
                 ],
                 heading: {
                     options: [
                         {
-                            model: 'paragraph',
-                            title: 'Paragraph',
-                            class: 'ck-heading_paragraph'
+                            model: "paragraph",
+                            title: "Paragraph",
+                            class: "ck-heading_paragraph",
                         },
                         {
-                            model: 'heading1',
-                            view: 'h1',
-                            title: 'Heading 1',
-                            class: 'ck-heading_heading1'
+                            model: "heading1",
+                            view: "h1",
+                            title: "Heading 1",
+                            class: "ck-heading_heading1",
                         },
                         {
-                            model: 'heading2',
-                            view: 'h2',
-                            title: 'Heading 2',
-                            class: 'ck-heading_heading2'
+                            model: "heading2",
+                            view: "h2",
+                            title: "Heading 2",
+                            class: "ck-heading_heading2",
                         },
                         {
-                            model: 'heading3',
-                            view: 'h3',
-                            title: 'Heading 3',
-                            class: 'ck-heading_heading3'
+                            model: "heading3",
+                            view: "h3",
+                            title: "Heading 3",
+                            class: "ck-heading_heading3",
                         },
                         {
-                            model: 'heading4',
-                            view: 'h4',
-                            title: 'Heading 4',
-                            class: 'ck-heading_heading4'
+                            model: "heading4",
+                            view: "h4",
+                            title: "Heading 4",
+                            class: "ck-heading_heading4",
                         },
                         {
-                            model: 'heading5',
-                            view: 'h5',
-                            title: 'Heading 5',
-                            class: 'ck-heading_heading5'
+                            model: "heading5",
+                            view: "h5",
+                            title: "Heading 5",
+                            class: "ck-heading_heading5",
                         },
                         {
-                            model: 'heading6',
-                            view: 'h6',
-                            title: 'Heading 6',
-                            class: 'ck-heading_heading6'
-                        }
-                    ]
+                            model: "heading6",
+                            view: "h6",
+                            title: "Heading 6",
+                            class: "ck-heading_heading6",
+                        },
+                    ],
                 },
-                balloonToolbar: ['bold', 'italic', '|', 'link', '|', 'bulletedList', 'numberedList'],
-                blockToolbar: ['bold', 'italic', '|', 'link', 'insertTable', '|', 'bulletedList', 'numberedList', 'outdent', 'indent'],
+                balloonToolbar: [
+                    "bold",
+                    "italic",
+                    "|",
+                    "link",
+                    "|",
+                    "bulletedList",
+                    "numberedList",
+                ],
+                blockToolbar: [
+                    "bold",
+                    "italic",
+                    "|",
+                    "link",
+                    "insertTable",
+                    "|",
+                    "bulletedList",
+                    "numberedList",
+                    "outdent",
+                    "indent",
+                ],
                 htmlSupport: {
                     allow: [
                         {
                             name: /^.*$/,
                             styles: true,
                             attributes: true,
-                            classes: true
-                        }
-                    ]
+                            classes: true,
+                        },
+                    ],
                 },
-                initialData: '',
+                initialData: "",
                 link: {
                     addTargetToExternalLinks: true,
-                    defaultProtocol: 'https://',
+                    defaultProtocol: "https://",
                     decorators: {
                         toggleDownloadable: {
-                            mode: 'manual',
-                            label: 'Downloadable',
+                            mode: "manual",
+                            label: "Downloadable",
                             attributes: {
-                                download: 'file'
-                            }
-                        }
-                    }
+                                download: "file",
+                            },
+                        },
+                    },
                 },
-                placeholder: 'Type or paste your content here!',
+                placeholder: "Type or paste your content here!",
                 table: {
-                    contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableProperties', 'tableCellProperties']
+                    contentToolbar: [
+                        "tableColumn",
+                        "tableRow",
+                        "mergeTableCells",
+                        "tableProperties",
+                        "tableCellProperties",
+                    ],
                 },
                 image: {
-                    toolbar: ['imageTextAlternative']
+                    toolbar: ["imageTextAlternative"],
                 },
             },
         });

@@ -9,6 +9,7 @@
             </div>
             <div
                 class="bg-gradient-to-r from-[#413E1E] via-custome-gray via-40% to-custome-gray mt-3 py-12 text-white w-full"
+                style="min-height: 369px"
             >
                 <div class="container mx-auto px-4 sm:px-16 w-full">
                     <span v-html="custom_page.content"></span>
@@ -46,7 +47,7 @@ pre {
     padding: 15px;
     border-radius: 5px;
     overflow-x: auto;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     font-size: 14px;
 }
 
@@ -55,7 +56,7 @@ code {
     color: #2d2d2d;
     padding: 2px 4px;
     border-radius: 3px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     font-size: 14px;
 }
 

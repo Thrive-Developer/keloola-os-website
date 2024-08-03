@@ -2,8 +2,7 @@ import "./bootstrap";
 import { createApp, h } from "vue";
 import { createInertiaApp } from "@inertiajs/vue3";
 import Layout from "../js/Layouts/App.vue";
-import CKEditor from '@ckeditor/ckeditor5-vue';
-
+import CKEditor from "@ckeditor/ckeditor5-vue";
 createInertiaApp({
     resolve: (name) => {
         const pages = import.meta.glob("./Pages/**/*.vue", { eager: true });
